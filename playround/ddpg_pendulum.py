@@ -1,3 +1,7 @@
+# code reference:
+# 1.https://blog.csdn.net/blanokvaffy/article/details/86232658 for debuging
+# 2.https://github.com/liampetti/DDPG/blob/master/ddpg.py 
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -128,7 +132,8 @@ class Agent(object):
         if len(self.replay_buffer) < self.batch_size:
             return
         states, actions, rewards, next_states, dones = self.replay_buffer.sample(batch_size=self.batch_size, device='cpu')
-        
+
+        #===============================Critic Update===============================
         with torch.no_grad():
             target = rewards+ GAMMA* (1-dones) * self.Q_target((next_states, self.P_target(next_states)))  
         Q = self.Q_online((states,actions))
@@ -137,7 +142,7 @@ class Agent(object):
         td_error.backward()
         self.q_optimizer.step()
 
-
+        #===============================Actor Update===============================
         q = self.Q_online((states, self.P_online(states)))  
         loss_a = -torch.mean(q) 
         self.p_optimizer.zero_grad()
@@ -174,7 +179,6 @@ def train(env, agent):
         episode_rewards.append(last_reward)
         print("Avg rewards", np.mean(episode_rewards[-10:]))
 def run():
-    # env = gym.make('CartPole-v1') # use latest version
     env = gym.make('Pendulum-v0')
     env.seed(seed) 
     agent = Agent(a_dim=1, s_dim=3, a_bound=2)
