@@ -44,10 +44,8 @@ class Agent(object):
         if not test:
             with torch.no_grad():
                 # boring type casting
-                self.P_online.eval()
                 state = ((torch.from_numpy(state)).unsqueeze(0)).float().to(self.device)
                 action = self.P_online(state) # continuous output
-                self.P_online.train()
                 a = action.data.cpu().numpy()   
                 if self.ep_step < 200:
                     self.ou_level = self.noise.ornstein_uhlenbeck_level(self.ou_level)
@@ -79,7 +77,6 @@ class Agent(object):
 
         #===============================Critic Update===============================
         with torch.no_grad():
-            self.P_target.eval()
             self.Q_target.eval()
             target = rewards+ self.gamma * (1-dones) * self.Q_target((next_states, self.P_target(next_states)))  
         Q = self.Q_online((states,actions))
