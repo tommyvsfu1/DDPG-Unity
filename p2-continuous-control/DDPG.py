@@ -71,6 +71,8 @@ class Agent(object):
     def update(self):
         if len(self.replay_buffer) < self.batch_size:
             return
+        if len(self.replay_buffer <= self.capacity * 0.8):
+            return
         states, actions, rewards, next_states, dones = self.replay_buffer.sample(batch_size=self.batch_size, device=self.device)
 
         #===============================Critic Update===============================
