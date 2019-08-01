@@ -4,6 +4,7 @@ import numpy as np
 from logger import TensorboardLogger
 from collections import namedtuple
 import random
+import copy
 seed = 11037
 random.seed(seed)
 np.random.seed(seed)
@@ -15,9 +16,36 @@ SIGMA = 0.5 # Volatility of the stochastic processes
 OU_A = 3. # The rate of mean reversion
 OU_MU = 0. # The long run average interest rate
 
+EPSILON = 1.0           # explore->exploit noise process added to act step
+EPSILON_DECAY = 1e-6    # decay rate for noise process
 Transition = namedtuple('Transition',
                         ('state', 'action','reward', 'next_state', 'done'))
+class OUNoise:
+    """Ornstein-Uhlenbeck process."""
 
+    def __init__(self, size, seed, mu=0., theta=0.15, sigma=0.2):
+        """Initialize parameters and noise process.
+        Params
+        ======
+            mu: long-running mean
+            theta: the speed of mean reversion
+            sigma: the volatility parameter
+        """
+        self.mu = mu * np.ones(size)
+        self.theta = theta
+        self.sigma = sigma
+        self.reset()
+
+    def reset(self):
+        """Reset the internal state (= noise) to mean (mu)."""
+        self.state = copy.copy(self.mu)
+
+    def sample(self):
+        """Update internal state and return it as a noise sample."""
+        x = self.state
+        dx = self.theta * (self.mu - x) + self.sigma * np.array([random.random() for i in range(len(x))])
+        self.state = x + dx
+        return self.state
 
 class Noise(object):
 
@@ -111,8 +139,8 @@ class Agent(object):
         self.discrete = False
         self.ep_step = 0
         # noise
-        self.noise = Noise(DELTA, SIGMA, OU_A, OU_MU)
-                
+        self.noise = OUNoise(4)
+        self.epsilon = EPSILON
         # Initialize noise
         self.ou_level = 0.
         self.action_low = -clip_value
@@ -133,9 +161,7 @@ class Agent(object):
                 actions = self.P_online(state) # continuous output
                 self.P_online.train()
                 a = actions.data.cpu().numpy()   
-                if self.ep_step < 200:
-                    self.ou_level = self.noise.ornstein_uhlenbeck_level(self.ou_level)
-                actions = np.clip(a + self.ou_level,self.action_low,self.action_high)
+                actions = np.clip(a + self.epsilon * self.noise.sample(),self.action_low,self.action_high)
                 # self.tensorboard.scalar_summary("action_0", action[0][0], self.tensorboard.time_step)
                 # self.tensorboard.scalar_summary("action_1", action[0][1], self.tensorboard.time_step)
                 # self.tensorboard.scalar_summary("action_2", action[0][2], self.tensorboard.time_step)
@@ -184,7 +210,7 @@ class Agent(object):
         td_error = self.loss_td(Q, target)
         self.q_optimizer.zero_grad()
         td_error.backward()
-        torch.nn.utils.clip_grad_norm_(self.Q_online.parameters(), 1)
+        # torch.nn.utils.clip_grad_norm_(self.Q_online.parameters(), 1)
         self.q_optimizer.step()
 
         #===============================Actor Update===============================
@@ -197,3 +223,5 @@ class Agent(object):
         #===============================Target Update===============================
         soft_update(self.Q_target, self.Q_online, tau=1e-3)
         soft_update(self.P_target, self.P_online, tau=1e-3)
+
+        self.epsilon -= EPSILON_DECAY
