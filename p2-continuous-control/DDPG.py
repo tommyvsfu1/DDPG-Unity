@@ -235,4 +235,3 @@ class Agent(object):
         soft_update(self.P_target, self.P_online, tau=1e-3)
         self.epsilon -= EPSILON_DECAY
         self.tensorboard.train_update()
-        print("finish update -- debug")
