@@ -106,10 +106,15 @@ def run(args):
         env = UnityEnvironment(file_name='./Reacher.app')
     else :
         env = UnityEnvironment(file_name='./Reacher_Linux_NoVis/Reacher.x86_64')
+
+    if torch.cuda.is_available():
+        device = torch.device('cuda')
+    else :
+        device = torch.device('cpu')
     # get the default brain
     brain_name = env.brain_names[0]
     brain = env.brains[brain_name]
-    agent = Agent(a_dim=4, s_dim=33, clip_value=1) # continuous action clip
+    agent = Agent(a_dim=4, s_dim=33, clip_value=1, device=device) # continuous action clip
     train(env, agent, brain_name)
     env.close()
 

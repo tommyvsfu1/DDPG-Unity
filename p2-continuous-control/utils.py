@@ -29,7 +29,7 @@ class ReplayBuffer(object):
         self.memory[self.position] = Transition(*args)
         self.position = (self.position + 1) % self.capacity
 
-    def sample(self, batch_size, device='cpu'):
+    def sample(self, batch_size, device):
         transitions = random.sample(self.memory, batch_size)
         batch = Transition(*zip(*transitions))
         state_batch = torch.cat(batch.state).to(device)

@@ -11,13 +11,14 @@ OU_A = 3. # The rate of mean reversion
 OU_MU = 0. # The long run average interest rate
 
 class Agent(object):
-    def __init__(self, a_dim, s_dim, clip_value):
+    def __init__(self, a_dim, s_dim, clip_value, device):
+        self.device = device
         self.a_dim, self.s_dim  = a_dim, s_dim
-        self.P_online = Actor(s_dim,a_dim)
-        self.P_target = Actor(s_dim,a_dim)
+        self.P_online = Actor(s_dim,a_dim).to(device)
+        self.P_target = Actor(s_dim,a_dim).to(device)
         self.P_target.load_state_dict(self.P_online.state_dict())
-        self.Q_online = Critic(s_dim,a_dim)
-        self.Q_target = Critic(s_dim,a_dim)
+        self.Q_online = Critic(s_dim,a_dim).to(device)
+        self.Q_target = Critic(s_dim,a_dim).to(device)
         self.Q_target.load_state_dict(self.Q_online.state_dict())
         self.q_optimizer = torch.optim.Adam(self.Q_online.parameters(),lr=1e-3)
         self.p_optimizer = torch.optim.Adam(self.P_online.parameters(),lr=1e-3)
@@ -43,7 +44,7 @@ class Agent(object):
         if not test:
             with torch.no_grad():
                 # boring type casting
-                state = ((torch.from_numpy(state)).unsqueeze(0)).float().to('cpu')
+                state = ((torch.from_numpy(state)).unsqueeze(0)).float().to(self.device)
                 action = self.P_online(state) # continuous output
                 a = action.data.cpu().numpy()   
                 if self.ep_step < 200:
@@ -70,7 +71,7 @@ class Agent(object):
     def update(self):
         if len(self.replay_buffer) < self.batch_size:
             return
-        states, actions, rewards, next_states, dones = self.replay_buffer.sample(batch_size=self.batch_size, device='cpu')
+        states, actions, rewards, next_states, dones = self.replay_buffer.sample(batch_size=self.batch_size, device=self.device)
 
         #===============================Critic Update===============================
         with torch.no_grad():
