@@ -20,8 +20,8 @@ class Agent(object):
         self.Q_online = Critic(s_dim,a_dim).to(device)
         self.Q_target = Critic(s_dim,a_dim).to(device)
         self.Q_target.load_state_dict(self.Q_online.state_dict())
-        self.q_optimizer = torch.optim.Adam(self.Q_online.parameters(),lr=1e-3)
-        self.p_optimizer = torch.optim.Adam(self.P_online.parameters(),lr=1e-3)
+        self.q_optimizer = torch.optim.Adam(self.Q_online.parameters(),lr=3e-3)
+        self.p_optimizer = torch.optim.Adam(self.P_online.parameters(),lr=3e-3)
 
 
         self.loss_td = torch.nn.MSELoss()
@@ -44,8 +44,10 @@ class Agent(object):
         if not test:
             with torch.no_grad():
                 # boring type casting
+                self.P_online.eval()
                 state = ((torch.from_numpy(state)).unsqueeze(0)).float().to(self.device)
                 action = self.P_online(state) # continuous output
+                self.P_online.train()
                 a = action.data.cpu().numpy()   
                 if self.ep_step < 200:
                     self.ou_level = self.noise.ornstein_uhlenbeck_level(self.ou_level)
@@ -77,6 +79,8 @@ class Agent(object):
 
         #===============================Critic Update===============================
         with torch.no_grad():
+            self.P_target.eval()
+            self.Q_target.eval()
             target = rewards+ self.gamma * (1-dones) * self.Q_target((next_states, self.P_target(next_states)))  
         Q = self.Q_online((states,actions))
         td_error = self.loss_td(Q, target)
