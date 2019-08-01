@@ -117,9 +117,9 @@ def parse():
 
 def run(args):
     if args.machine == "Mac":
-        env = UnityEnvironment(file_name='./Reacher.app')
+        env = UnityEnvironment(file_name='./Reacher.app',seed=1)
     else :
-        env = UnityEnvironment(file_name='./Reacher_Linux_NoVis/Reacher.x86_64')
+        env = UnityEnvironment(file_name='./Reacher_Linux_NoVis/Reacher.x86_64',seed=1)
 
     if torch.cuda.is_available():
         device = torch.device('cuda')
