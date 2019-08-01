@@ -209,7 +209,7 @@ class Agent(object):
         td_error = self.loss_td(Q, target)
         self.q_optimizer.zero_grad()
         td_error.backward()
-        # torch.nn.utils.clip_grad_norm_(self.Q_online.parameters(), 1)
+        torch.nn.utils.clip_grad_norm_(self.Q_online.parameters(), 1)
         for p in self.Q_online.named_parameters():
             layer_name, parameter = p
             if layer_name[0:2] != "bn":
@@ -222,7 +222,7 @@ class Agent(object):
         loss_a = -torch.mean(q) 
         self.p_optimizer.zero_grad()
         loss_a.backward()
-        # torch.nn.utils.clip_grad_norm_(self.P_online.parameters(), 1)
+        torch.nn.utils.clip_grad_norm_(self.P_online.parameters(), 1)
         for p in self.P_online.named_parameters():
             layer_name, parameter = p
             if layer_name[0:2] != "bn":
