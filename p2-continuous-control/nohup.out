@@ -1,0 +1,1504 @@
+Found path: /home/tommy558788_eed04/deep-reinforcement-learning-gym/p2-continuous-control/./Reacher_Linux_NoVis/Reacher.x86_64
+Mono path[0] = '/home/tommy558788_eed04/deep-reinforcement-learning-gym/p2-continuous-control/./Reacher_Linux_NoVis/Reacher_Data/Managed'
+Mono config path = '/home/tommy558788_eed04/deep-reinforcement-learning-gym/p2-continuous-control/./Reacher_Linux_NoVis/Reacher_Data/MonoBleedingEdge/etc'
+Preloaded 'libgrpc_csharp_ext.x64.so'
+Unable to preload the following plugins:
+	libgrpc_csharp_ext.x86.so
+Logging to /home/tommy558788_eed04/.config/unity3d/Unity Technologies/Unity Environment/Player.log
+INFO:unityagents:
+'Academy' started successfully!
+Unity Academy name: Academy
+        Number of Brains: 1
+        Number of External Brains : 1
+        Lesson number : 0
+        Reset Parameters :
+		goal_size -> 5.0
+		goal_speed -> 1.0
+Unity brain name: ReacherBrain
+        Number of Visual Observations (per agent): 0
+        Vector Observation space type: continuous
+        Vector Observation space size (per agent): 33
+        Number of stacked Vector Observation: 1
+        Vector Action space type: continuous
+        Vector Action space size (per agent): 4
+        Vector Action descriptions: , , , 
+Episode 0 (3 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 1.7
+save model to ./best
+Episode 1 (3 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 1.3
+save model to ./best
+Episode 2 (3 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 1.5
+save model to ./best
+Episode 3 (3 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 1.2
+save model to ./best
+Episode 4 (3 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 1.1
+save model to ./best
+Episode 5 (3 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 1.1
+save model to ./best
+Episode 6 (3 sec)  -- 	Min: 0.1	Max: 0.1	Mean: 0.1	Mov. Avg: 0.9
+save model to ./best
+Episode 7 (4 sec)  -- 	Min: 0.6	Max: 0.6	Mean: 0.6	Mov. Avg: 0.9
+save model to ./best
+Episode 8 (4 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 0.8
+save model to ./best
+Episode 9 (3 sec)  -- 	Min: 0.3	Max: 0.3	Mean: 0.3	Mov. Avg: 0.8
+save model to ./best
+Episode 10 (3 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 0.7
+save model to ./best
+Episode 11 (3 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 0.7
+save model to ./best
+Episode 12 (3 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 0.7
+save model to ./best
+Episode 13 (3 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 0.8
+save model to ./best
+Episode 14 (3 sec)  -- 	Min: 0.2	Max: 0.2	Mean: 0.2	Mov. Avg: 0.7
+save model to ./best
+Episode 15 (3 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 0.7
+save model to ./best
+Episode 16 (8 sec)  -- 	Min: 0.6	Max: 0.6	Mean: 0.6	Mov. Avg: 0.7
+save model to ./best
+Episode 17 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 0.7
+save model to ./best
+Episode 18 (8 sec)  -- 	Min: 0.6	Max: 0.6	Mean: 0.6	Mov. Avg: 0.7
+save model to ./best
+Episode 19 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 0.7
+save model to ./best
+Episode 20 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 0.7
+save model to ./best
+Episode 21 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 0.7
+save model to ./best
+Episode 22 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 0.7
+save model to ./best
+Episode 23 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 0.7
+save model to ./best
+Episode 24 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 0.7
+save model to ./best
+Episode 25 (8 sec)  -- 	Min: 0.1	Max: 0.1	Mean: 0.1	Mov. Avg: 0.7
+save model to ./best
+Episode 26 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 0.7
+save model to ./best
+Episode 27 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 0.7
+save model to ./best
+Episode 28 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 0.7
+save model to ./best
+Episode 29 (8 sec)  -- 	Min: 0.6	Max: 0.6	Mean: 0.6	Mov. Avg: 0.7
+save model to ./best
+Episode 30 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 0.7
+save model to ./best
+Episode 31 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 0.7
+save model to ./best
+Episode 32 (8 sec)  -- 	Min: 0.2	Max: 0.2	Mean: 0.2	Mov. Avg: 0.7
+save model to ./best
+Episode 33 (8 sec)  -- 	Min: 0.2	Max: 0.2	Mean: 0.2	Mov. Avg: 0.7
+save model to ./best
+Episode 34 (8 sec)  -- 	Min: 0.2	Max: 0.2	Mean: 0.2	Mov. Avg: 0.7
+save model to ./best
+Episode 35 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 0.7
+save model to ./best
+Episode 36 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 0.7
+save model to ./best
+Episode 37 (8 sec)  -- 	Min: 2.3	Max: 2.3	Mean: 2.3	Mov. Avg: 0.7
+save model to ./best
+Episode 38 (8 sec)  -- 	Min: 0.3	Max: 0.3	Mean: 0.3	Mov. Avg: 0.7
+save model to ./best
+Episode 39 (8 sec)  -- 	Min: 0.6	Max: 0.6	Mean: 0.6	Mov. Avg: 0.7
+save model to ./best
+Episode 40 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 0.7
+save model to ./best
+Episode 41 (8 sec)  -- 	Min: 0.0	Max: 0.0	Mean: 0.0	Mov. Avg: 0.7
+save model to ./best
+Episode 42 (8 sec)  -- 	Min: 0.3	Max: 0.3	Mean: 0.3	Mov. Avg: 0.7
+save model to ./best
+Episode 43 (8 sec)  -- 	Min: 0.3	Max: 0.3	Mean: 0.3	Mov. Avg: 0.7
+save model to ./best
+Episode 44 (8 sec)  -- 	Min: 0.2	Max: 0.2	Mean: 0.2	Mov. Avg: 0.7
+save model to ./best
+Episode 45 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 0.7
+save model to ./best
+Episode 46 (8 sec)  -- 	Min: 0.1	Max: 0.1	Mean: 0.1	Mov. Avg: 0.7
+save model to ./best
+Episode 47 (8 sec)  -- 	Min: 0.1	Max: 0.1	Mean: 0.1	Mov. Avg: 0.7
+save model to ./best
+Episode 48 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 0.7
+save model to ./best
+Episode 49 (8 sec)  -- 	Min: 0.2	Max: 0.2	Mean: 0.2	Mov. Avg: 0.7
+save model to ./best
+Episode 50 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 0.7
+save model to ./best
+Episode 51 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 0.7
+save model to ./best
+Episode 52 (8 sec)  -- 	Min: 0.3	Max: 0.3	Mean: 0.3	Mov. Avg: 0.7
+save model to ./best
+Episode 53 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 0.7
+save model to ./best
+Episode 54 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 0.7
+save model to ./best
+Episode 55 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 0.7
+save model to ./best
+Episode 56 (8 sec)  -- 	Min: 0.2	Max: 0.2	Mean: 0.2	Mov. Avg: 0.7
+save model to ./best
+Episode 57 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 0.7
+save model to ./best
+Episode 58 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 0.7
+save model to ./best
+Episode 59 (8 sec)  -- 	Min: 0.3	Max: 0.3	Mean: 0.3	Mov. Avg: 0.7
+save model to ./best
+Episode 60 (8 sec)  -- 	Min: 0.0	Max: 0.0	Mean: 0.0	Mov. Avg: 0.7
+save model to ./best
+Episode 61 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 0.7
+save model to ./best
+Episode 62 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 0.7
+save model to ./best
+Episode 63 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 0.7
+save model to ./best
+Episode 64 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 0.7
+save model to ./best
+Episode 65 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 0.7
+save model to ./best
+Episode 66 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 0.7
+save model to ./best
+Episode 67 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 0.7
+save model to ./best
+Episode 68 (8 sec)  -- 	Min: 0.3	Max: 0.3	Mean: 0.3	Mov. Avg: 0.7
+save model to ./best
+Episode 69 (8 sec)  -- 	Min: 0.0	Max: 0.0	Mean: 0.0	Mov. Avg: 0.7
+save model to ./best
+Episode 70 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 0.7
+save model to ./best
+Episode 71 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 0.7
+save model to ./best
+Episode 72 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 0.7
+save model to ./best
+Episode 73 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 0.7
+save model to ./best
+Episode 74 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 0.7
+save model to ./best
+Episode 75 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 0.7
+save model to ./best
+Episode 76 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 0.7
+save model to ./best
+Episode 77 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 0.7
+save model to ./best
+Episode 78 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 0.7
+save model to ./best
+Episode 79 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 0.7
+save model to ./best
+Episode 80 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 0.7
+save model to ./best
+Episode 81 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 0.7
+save model to ./best
+Episode 82 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 0.7
+save model to ./best
+Episode 83 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 0.7
+save model to ./best
+Episode 84 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 0.7
+save model to ./best
+Episode 85 (8 sec)  -- 	Min: 0.0	Max: 0.0	Mean: 0.0	Mov. Avg: 0.7
+save model to ./best
+Episode 86 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 0.7
+save model to ./best
+Episode 87 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 0.7
+save model to ./best
+Episode 88 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 0.7
+save model to ./best
+Episode 89 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 0.7
+save model to ./best
+Episode 90 (8 sec)  -- 	Min: 0.1	Max: 0.1	Mean: 0.1	Mov. Avg: 0.7
+save model to ./best
+Episode 91 (8 sec)  -- 	Min: 0.3	Max: 0.3	Mean: 0.3	Mov. Avg: 0.7
+save model to ./best
+Episode 92 (7 sec)  -- 	Min: 0.6	Max: 0.6	Mean: 0.6	Mov. Avg: 0.7
+save model to ./best
+Episode 93 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 0.7
+save model to ./best
+Episode 94 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 0.7
+save model to ./best
+Episode 95 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 0.7
+save model to ./best
+Episode 96 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 0.7
+save model to ./best
+Episode 97 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 0.7
+save model to ./best
+Episode 98 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 0.7
+save model to ./best
+Episode 99 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 0.7
+save model to ./best
+Episode 100 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 0.7
+save model to ./best
+Episode 101 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 0.7
+save model to ./best
+Episode 102 (8 sec)  -- 	Min: 0.6	Max: 0.6	Mean: 0.6	Mov. Avg: 0.7
+save model to ./best
+Episode 103 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 0.7
+save model to ./best
+Episode 104 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 0.7
+save model to ./best
+Episode 105 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 0.7
+save model to ./best
+Episode 106 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 0.7
+save model to ./best
+Episode 107 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 0.7
+save model to ./best
+Episode 108 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 0.7
+save model to ./best
+Episode 109 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 0.7
+save model to ./best
+Episode 110 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 0.7
+save model to ./best
+Episode 111 (8 sec)  -- 	Min: 2.5	Max: 2.5	Mean: 2.5	Mov. Avg: 0.8
+save model to ./best
+Episode 112 (8 sec)  -- 	Min: 0.1	Max: 0.1	Mean: 0.1	Mov. Avg: 0.8
+save model to ./best
+Episode 113 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 0.7
+save model to ./best
+Episode 114 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 0.8
+save model to ./best
+Episode 115 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 0.8
+save model to ./best
+Episode 116 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 0.8
+save model to ./best
+Episode 117 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 0.8
+save model to ./best
+Episode 118 (8 sec)  -- 	Min: 2.9	Max: 2.9	Mean: 2.9	Mov. Avg: 0.8
+save model to ./best
+Episode 119 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 0.8
+save model to ./best
+Episode 120 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 0.8
+save model to ./best
+Episode 121 (8 sec)  -- 	Min: 3.4	Max: 3.4	Mean: 3.4	Mov. Avg: 0.8
+save model to ./best
+Episode 122 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 0.8
+save model to ./best
+Episode 123 (8 sec)  -- 	Min: 3.6	Max: 3.6	Mean: 3.6	Mov. Avg: 0.9
+save model to ./best
+Episode 124 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 0.9
+save model to ./best
+Episode 125 (8 sec)  -- 	Min: 2.5	Max: 2.5	Mean: 2.5	Mov. Avg: 0.9
+save model to ./best
+Episode 126 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 0.9
+save model to ./best
+Episode 127 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 0.9
+save model to ./best
+Episode 128 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 0.9
+save model to ./best
+Episode 129 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 0.9
+save model to ./best
+Episode 130 (9 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 0.9
+save model to ./best
+Episode 131 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 0.9
+save model to ./best
+Episode 132 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 0.9
+save model to ./best
+Episode 133 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 1.0
+save model to ./best
+Episode 134 (8 sec)  -- 	Min: 0.0	Max: 0.0	Mean: 0.0	Mov. Avg: 0.9
+save model to ./best
+Episode 135 (8 sec)  -- 	Min: 2.6	Max: 2.6	Mean: 2.6	Mov. Avg: 1.0
+save model to ./best
+Episode 136 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 1.0
+save model to ./best
+Episode 137 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 1.0
+save model to ./best
+Episode 138 (8 sec)  -- 	Min: 2.6	Max: 2.6	Mean: 2.6	Mov. Avg: 1.0
+save model to ./best
+Episode 139 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 1.0
+save model to ./best
+Episode 140 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 1.0
+save model to ./best
+Episode 141 (8 sec)  -- 	Min: 3.3	Max: 3.3	Mean: 3.3	Mov. Avg: 1.0
+save model to ./best
+Episode 142 (8 sec)  -- 	Min: 5.1	Max: 5.1	Mean: 5.1	Mov. Avg: 1.1
+save model to ./best
+Episode 143 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 1.1
+save model to ./best
+Episode 144 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 1.1
+save model to ./best
+Episode 145 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 1.1
+save model to ./best
+Episode 146 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 1.1
+save model to ./best
+Episode 147 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 1.1
+save model to ./best
+Episode 148 (8 sec)  -- 	Min: 2.9	Max: 2.9	Mean: 2.9	Mov. Avg: 1.1
+save model to ./best
+Episode 149 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 1.1
+save model to ./best
+Episode 150 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 1.1
+save model to ./best
+Episode 151 (8 sec)  -- 	Min: 2.1	Max: 2.1	Mean: 2.1	Mov. Avg: 1.2
+save model to ./best
+Episode 152 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 1.2
+save model to ./best
+Episode 153 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 1.2
+save model to ./best
+Episode 154 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 1.2
+save model to ./best
+Episode 155 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 1.2
+save model to ./best
+Episode 156 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 1.2
+save model to ./best
+Episode 157 (8 sec)  -- 	Min: 2.7	Max: 2.7	Mean: 2.7	Mov. Avg: 1.2
+save model to ./best
+Episode 158 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 1.2
+save model to ./best
+Episode 159 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 1.2
+save model to ./best
+Episode 160 (8 sec)  -- 	Min: 2.6	Max: 2.6	Mean: 2.6	Mov. Avg: 1.3
+save model to ./best
+Episode 161 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 1.3
+save model to ./best
+Episode 162 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 1.3
+save model to ./best
+Episode 163 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 1.3
+save model to ./best
+Episode 164 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 1.3
+save model to ./best
+Episode 165 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 1.3
+save model to ./best
+Episode 166 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 1.3
+save model to ./best
+Episode 167 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 1.3
+save model to ./best
+Episode 168 (8 sec)  -- 	Min: 3.1	Max: 3.1	Mean: 3.1	Mov. Avg: 1.3
+save model to ./best
+Episode 169 (9 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 1.3
+save model to ./best
+Episode 170 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 1.4
+save model to ./best
+Episode 171 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 1.3
+save model to ./best
+Episode 172 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 1.4
+save model to ./best
+Episode 173 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 1.4
+save model to ./best
+Episode 174 (8 sec)  -- 	Min: 3.3	Max: 3.3	Mean: 3.3	Mov. Avg: 1.4
+save model to ./best
+Episode 175 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 1.4
+save model to ./best
+Episode 176 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 1.4
+save model to ./best
+Episode 177 (8 sec)  -- 	Min: 2.3	Max: 2.3	Mean: 2.3	Mov. Avg: 1.4
+save model to ./best
+Episode 178 (8 sec)  -- 	Min: 2.1	Max: 2.1	Mean: 2.1	Mov. Avg: 1.4
+save model to ./best
+Episode 179 (8 sec)  -- 	Min: 2.8	Max: 2.8	Mean: 2.8	Mov. Avg: 1.5
+save model to ./best
+Episode 180 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 1.5
+save model to ./best
+Episode 181 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 1.5
+save model to ./best
+Episode 182 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 1.5
+save model to ./best
+Episode 183 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 1.5
+save model to ./best
+Episode 184 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 1.5
+save model to ./best
+Episode 185 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 1.5
+save model to ./best
+Episode 186 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 1.5
+save model to ./best
+Episode 187 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 1.5
+save model to ./best
+Episode 188 (8 sec)  -- 	Min: 2.3	Max: 2.3	Mean: 2.3	Mov. Avg: 1.5
+save model to ./best
+Episode 189 (8 sec)  -- 	Min: 2.3	Max: 2.3	Mean: 2.3	Mov. Avg: 1.5
+save model to ./best
+Episode 190 (8 sec)  -- 	Min: 2.6	Max: 2.6	Mean: 2.6	Mov. Avg: 1.6
+save model to ./best
+Episode 191 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 1.6
+save model to ./best
+Episode 192 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 1.6
+save model to ./best
+Episode 193 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 1.6
+save model to ./best
+Episode 194 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 1.6
+save model to ./best
+Episode 195 (8 sec)  -- 	Min: 0.1	Max: 0.1	Mean: 0.1	Mov. Avg: 1.6
+save model to ./best
+Episode 196 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 1.6
+save model to ./best
+Episode 197 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 1.6
+save model to ./best
+Episode 198 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 1.6
+save model to ./best
+Episode 199 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 1.6
+save model to ./best
+Episode 200 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 1.6
+save model to ./best
+Episode 201 (8 sec)  -- 	Min: 2.1	Max: 2.1	Mean: 2.1	Mov. Avg: 1.6
+save model to ./best
+Episode 202 (8 sec)  -- 	Min: 2.3	Max: 2.3	Mean: 2.3	Mov. Avg: 1.6
+save model to ./best
+Episode 203 (8 sec)  -- 	Min: 3.4	Max: 3.4	Mean: 3.4	Mov. Avg: 1.7
+save model to ./best
+Episode 204 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 1.7
+save model to ./best
+Episode 205 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 1.7
+save model to ./best
+Episode 206 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 1.7
+save model to ./best
+Episode 207 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 1.7
+save model to ./best
+Episode 208 (8 sec)  -- 	Min: 3.4	Max: 3.4	Mean: 3.4	Mov. Avg: 1.7
+save model to ./best
+Episode 209 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 1.7
+save model to ./best
+Episode 210 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 1.7
+save model to ./best
+Episode 211 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 1.7
+save model to ./best
+Episode 212 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 1.7
+save model to ./best
+Episode 213 (8 sec)  -- 	Min: 2.3	Max: 2.3	Mean: 2.3	Mov. Avg: 1.7
+save model to ./best
+Episode 214 (8 sec)  -- 	Min: 3.0	Max: 3.0	Mean: 3.0	Mov. Avg: 1.8
+save model to ./best
+Episode 215 (8 sec)  -- 	Min: 4.4	Max: 4.4	Mean: 4.4	Mov. Avg: 1.8
+save model to ./best
+Episode 216 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 1.8
+save model to ./best
+Episode 217 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 1.8
+save model to ./best
+Episode 218 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 1.8
+save model to ./best
+Episode 219 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 1.8
+save model to ./best
+Episode 220 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 1.8
+save model to ./best
+Episode 221 (8 sec)  -- 	Min: 2.7	Max: 2.7	Mean: 2.7	Mov. Avg: 1.8
+save model to ./best
+Episode 222 (8 sec)  -- 	Min: 7.5	Max: 7.5	Mean: 7.5	Mov. Avg: 1.8
+save model to ./best
+Episode 223 (8 sec)  -- 	Min: 4.5	Max: 4.5	Mean: 4.5	Mov. Avg: 1.8
+save model to ./best
+Episode 224 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 1.8
+save model to ./best
+Episode 225 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 1.8
+save model to ./best
+Episode 226 (8 sec)  -- 	Min: 4.5	Max: 4.5	Mean: 4.5	Mov. Avg: 1.8
+save model to ./best
+Episode 227 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 1.8
+save model to ./best
+Episode 228 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 1.8
+save model to ./best
+Episode 229 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 1.8
+save model to ./best
+Episode 230 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 1.8
+save model to ./best
+Episode 231 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 1.8
+save model to ./best
+Episode 232 (8 sec)  -- 	Min: 3.8	Max: 3.8	Mean: 3.8	Mov. Avg: 1.9
+save model to ./best
+Episode 233 (8 sec)  -- 	Min: 2.1	Max: 2.1	Mean: 2.1	Mov. Avg: 1.9
+save model to ./best
+Episode 234 (8 sec)  -- 	Min: 2.6	Max: 2.6	Mean: 2.6	Mov. Avg: 1.9
+save model to ./best
+Episode 235 (8 sec)  -- 	Min: 7.4	Max: 7.4	Mean: 7.4	Mov. Avg: 1.9
+save model to ./best
+Episode 236 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.0
+save model to ./best
+Episode 237 (8 sec)  -- 	Min: 5.3	Max: 5.3	Mean: 5.3	Mov. Avg: 2.0
+save model to ./best
+Episode 238 (8 sec)  -- 	Min: 3.1	Max: 3.1	Mean: 3.1	Mov. Avg: 2.0
+save model to ./best
+Episode 239 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 2.0
+save model to ./best
+Episode 240 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.0
+save model to ./best
+Episode 241 (8 sec)  -- 	Min: 5.2	Max: 5.2	Mean: 5.2	Mov. Avg: 2.0
+save model to ./best
+Episode 242 (8 sec)  -- 	Min: 2.3	Max: 2.3	Mean: 2.3	Mov. Avg: 2.0
+save model to ./best
+Episode 243 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.0
+save model to ./best
+Episode 244 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 2.0
+save model to ./best
+Episode 245 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 2.0
+save model to ./best
+Episode 246 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 2.0
+save model to ./best
+Episode 247 (8 sec)  -- 	Min: 3.8	Max: 3.8	Mean: 3.8	Mov. Avg: 2.0
+save model to ./best
+Episode 248 (8 sec)  -- 	Min: 5.5	Max: 5.5	Mean: 5.5	Mov. Avg: 2.1
+save model to ./best
+Episode 249 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 2.1
+save model to ./best
+Episode 250 (8 sec)  -- 	Min: 4.4	Max: 4.4	Mean: 4.4	Mov. Avg: 2.1
+save model to ./best
+Episode 251 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 2.1
+save model to ./best
+Episode 252 (8 sec)  -- 	Min: 4.0	Max: 4.0	Mean: 4.0	Mov. Avg: 2.1
+save model to ./best
+Episode 253 (8 sec)  -- 	Min: 2.5	Max: 2.5	Mean: 2.5	Mov. Avg: 2.1
+save model to ./best
+Episode 254 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 2.1
+save model to ./best
+Episode 255 (8 sec)  -- 	Min: 2.7	Max: 2.7	Mean: 2.7	Mov. Avg: 2.2
+save model to ./best
+Episode 256 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 2.1
+save model to ./best
+Episode 257 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.1
+save model to ./best
+Episode 258 (8 sec)  -- 	Min: 3.0	Max: 3.0	Mean: 3.0	Mov. Avg: 2.2
+save model to ./best
+Episode 259 (8 sec)  -- 	Min: 4.7	Max: 4.7	Mean: 4.7	Mov. Avg: 2.2
+save model to ./best
+Episode 260 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 2.2
+save model to ./best
+Episode 261 (8 sec)  -- 	Min: 6.1	Max: 6.1	Mean: 6.1	Mov. Avg: 2.2
+save model to ./best
+Episode 262 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.2
+save model to ./best
+Episode 263 (8 sec)  -- 	Min: 3.3	Max: 3.3	Mean: 3.3	Mov. Avg: 2.2
+save model to ./best
+Episode 264 (8 sec)  -- 	Min: 6.0	Max: 6.0	Mean: 6.0	Mov. Avg: 2.3
+save model to ./best
+Episode 265 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 2.3
+save model to ./best
+Episode 266 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 2.3
+save model to ./best
+Episode 267 (8 sec)  -- 	Min: 3.1	Max: 3.1	Mean: 3.1	Mov. Avg: 2.3
+save model to ./best
+Episode 268 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.3
+save model to ./best
+Episode 269 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 2.3
+save model to ./best
+Episode 270 (8 sec)  -- 	Min: 3.8	Max: 3.8	Mean: 3.8	Mov. Avg: 2.3
+save model to ./best
+Episode 271 (8 sec)  -- 	Min: 3.6	Max: 3.6	Mean: 3.6	Mov. Avg: 2.3
+save model to ./best
+Episode 272 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 2.3
+save model to ./best
+Episode 273 (8 sec)  -- 	Min: 3.1	Max: 3.1	Mean: 3.1	Mov. Avg: 2.4
+save model to ./best
+Episode 274 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 2.3
+save model to ./best
+Episode 275 (8 sec)  -- 	Min: 4.3	Max: 4.3	Mean: 4.3	Mov. Avg: 2.4
+save model to ./best
+Episode 276 (8 sec)  -- 	Min: 3.4	Max: 3.4	Mean: 3.4	Mov. Avg: 2.4
+save model to ./best
+Episode 277 (8 sec)  -- 	Min: 6.7	Max: 6.7	Mean: 6.7	Mov. Avg: 2.4
+save model to ./best
+Episode 278 (8 sec)  -- 	Min: 2.7	Max: 2.7	Mean: 2.7	Mov. Avg: 2.4
+save model to ./best
+Episode 279 (8 sec)  -- 	Min: 3.3	Max: 3.3	Mean: 3.3	Mov. Avg: 2.4
+save model to ./best
+Episode 280 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 2.5
+save model to ./best
+Episode 281 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.5
+save model to ./best
+Episode 282 (8 sec)  -- 	Min: 3.8	Max: 3.8	Mean: 3.8	Mov. Avg: 2.5
+save model to ./best
+Episode 283 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 2.5
+save model to ./best
+Episode 284 (8 sec)  -- 	Min: 2.9	Max: 2.9	Mean: 2.9	Mov. Avg: 2.5
+save model to ./best
+Episode 285 (8 sec)  -- 	Min: 5.8	Max: 5.8	Mean: 5.8	Mov. Avg: 2.5
+save model to ./best
+Episode 286 (8 sec)  -- 	Min: 4.0	Max: 4.0	Mean: 4.0	Mov. Avg: 2.6
+save model to ./best
+Episode 287 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 2.6
+save model to ./best
+Episode 288 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 2.5
+save model to ./best
+Episode 289 (8 sec)  -- 	Min: 2.6	Max: 2.6	Mean: 2.6	Mov. Avg: 2.6
+save model to ./best
+Episode 290 (8 sec)  -- 	Min: 3.7	Max: 3.7	Mean: 3.7	Mov. Avg: 2.6
+save model to ./best
+Episode 291 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 2.6
+save model to ./best
+Episode 292 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 2.6
+save model to ./best
+Episode 293 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 2.6
+save model to ./best
+Episode 294 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.6
+save model to ./best
+Episode 295 (8 sec)  -- 	Min: 2.6	Max: 2.6	Mean: 2.6	Mov. Avg: 2.6
+save model to ./best
+Episode 296 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 2.6
+save model to ./best
+Episode 297 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 2.6
+save model to ./best
+Episode 298 (8 sec)  -- 	Min: 3.9	Max: 3.9	Mean: 3.9	Mov. Avg: 2.6
+save model to ./best
+Episode 299 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 2.6
+save model to ./best
+Episode 300 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 2.6
+save model to ./best
+Episode 301 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 2.6
+save model to ./best
+Episode 302 (8 sec)  -- 	Min: 0.3	Max: 0.3	Mean: 0.3	Mov. Avg: 2.6
+save model to ./best
+Episode 303 (8 sec)  -- 	Min: 2.7	Max: 2.7	Mean: 2.7	Mov. Avg: 2.5
+save model to ./best
+Episode 304 (8 sec)  -- 	Min: 3.0	Max: 3.0	Mean: 3.0	Mov. Avg: 2.6
+save model to ./best
+Episode 305 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 2.6
+save model to ./best
+Episode 306 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 2.6
+save model to ./best
+Episode 307 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 2.6
+save model to ./best
+Episode 308 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 2.5
+save model to ./best
+Episode 309 (8 sec)  -- 	Min: 2.9	Max: 2.9	Mean: 2.9	Mov. Avg: 2.6
+save model to ./best
+Episode 310 (8 sec)  -- 	Min: 2.1	Max: 2.1	Mean: 2.1	Mov. Avg: 2.6
+save model to ./best
+Episode 311 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 2.6
+save model to ./best
+Episode 312 (8 sec)  -- 	Min: 3.8	Max: 3.8	Mean: 3.8	Mov. Avg: 2.6
+save model to ./best
+Episode 313 (8 sec)  -- 	Min: 2.6	Max: 2.6	Mean: 2.6	Mov. Avg: 2.6
+save model to ./best
+Episode 314 (8 sec)  -- 	Min: 2.7	Max: 2.7	Mean: 2.7	Mov. Avg: 2.6
+save model to ./best
+Episode 315 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 2.6
+save model to ./best
+Episode 316 (8 sec)  -- 	Min: 4.9	Max: 4.9	Mean: 4.9	Mov. Avg: 2.6
+save model to ./best
+Episode 317 (8 sec)  -- 	Min: 4.4	Max: 4.4	Mean: 4.4	Mov. Avg: 2.6
+save model to ./best
+Episode 318 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 2.6
+save model to ./best
+Episode 319 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 2.6
+save model to ./best
+Episode 320 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 2.6
+save model to ./best
+Episode 321 (8 sec)  -- 	Min: 5.9	Max: 5.9	Mean: 5.9	Mov. Avg: 2.7
+save model to ./best
+Episode 322 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 2.6
+save model to ./best
+Episode 323 (8 sec)  -- 	Min: 4.2	Max: 4.2	Mean: 4.2	Mov. Avg: 2.6
+save model to ./best
+Episode 324 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 2.6
+save model to ./best
+Episode 325 (8 sec)  -- 	Min: 3.4	Max: 3.4	Mean: 3.4	Mov. Avg: 2.6
+save model to ./best
+Episode 326 (8 sec)  -- 	Min: 4.0	Max: 4.0	Mean: 4.0	Mov. Avg: 2.6
+save model to ./best
+Episode 327 (8 sec)  -- 	Min: 2.3	Max: 2.3	Mean: 2.3	Mov. Avg: 2.6
+save model to ./best
+Episode 328 (8 sec)  -- 	Min: 3.6	Max: 3.6	Mean: 3.6	Mov. Avg: 2.7
+save model to ./best
+Episode 329 (8 sec)  -- 	Min: 3.2	Max: 3.2	Mean: 3.2	Mov. Avg: 2.7
+save model to ./best
+Episode 330 (8 sec)  -- 	Min: 4.2	Max: 4.2	Mean: 4.2	Mov. Avg: 2.7
+save model to ./best
+Episode 331 (8 sec)  -- 	Min: 2.9	Max: 2.9	Mean: 2.9	Mov. Avg: 2.7
+save model to ./best
+Episode 332 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 2.7
+save model to ./best
+Episode 333 (8 sec)  -- 	Min: 2.3	Max: 2.3	Mean: 2.3	Mov. Avg: 2.7
+save model to ./best
+Episode 334 (8 sec)  -- 	Min: 2.9	Max: 2.9	Mean: 2.9	Mov. Avg: 2.7
+save model to ./best
+Episode 335 (8 sec)  -- 	Min: 4.7	Max: 4.7	Mean: 4.7	Mov. Avg: 2.7
+save model to ./best
+Episode 336 (8 sec)  -- 	Min: 2.9	Max: 2.9	Mean: 2.9	Mov. Avg: 2.7
+save model to ./best
+Episode 337 (8 sec)  -- 	Min: 2.3	Max: 2.3	Mean: 2.3	Mov. Avg: 2.7
+save model to ./best
+Episode 338 (8 sec)  -- 	Min: 2.7	Max: 2.7	Mean: 2.7	Mov. Avg: 2.7
+save model to ./best
+Episode 339 (8 sec)  -- 	Min: 3.1	Max: 3.1	Mean: 3.1	Mov. Avg: 2.7
+save model to ./best
+Episode 340 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 2.7
+save model to ./best
+Episode 341 (8 sec)  -- 	Min: 3.6	Max: 3.6	Mean: 3.6	Mov. Avg: 2.7
+save model to ./best
+Episode 342 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 2.7
+save model to ./best
+Episode 343 (8 sec)  -- 	Min: 4.3	Max: 4.3	Mean: 4.3	Mov. Avg: 2.7
+save model to ./best
+Episode 344 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 2.7
+save model to ./best
+Episode 345 (8 sec)  -- 	Min: 4.8	Max: 4.8	Mean: 4.8	Mov. Avg: 2.7
+save model to ./best
+Episode 346 (8 sec)  -- 	Min: 3.8	Max: 3.8	Mean: 3.8	Mov. Avg: 2.7
+save model to ./best
+Episode 347 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 2.7
+save model to ./best
+Episode 348 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 2.7
+save model to ./best
+Episode 349 (8 sec)  -- 	Min: 2.5	Max: 2.5	Mean: 2.5	Mov. Avg: 2.7
+save model to ./best
+Episode 350 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.7
+save model to ./best
+Episode 351 (8 sec)  -- 	Min: 2.9	Max: 2.9	Mean: 2.9	Mov. Avg: 2.7
+save model to ./best
+Episode 352 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.7
+save model to ./best
+Episode 353 (8 sec)  -- 	Min: 3.1	Max: 3.1	Mean: 3.1	Mov. Avg: 2.7
+save model to ./best
+Episode 354 (8 sec)  -- 	Min: 4.2	Max: 4.2	Mean: 4.2	Mov. Avg: 2.7
+save model to ./best
+Episode 355 (8 sec)  -- 	Min: 6.5	Max: 6.5	Mean: 6.5	Mov. Avg: 2.7
+save model to ./best
+Episode 356 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 2.7
+save model to ./best
+Episode 357 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 2.7
+save model to ./best
+Episode 358 (8 sec)  -- 	Min: 2.3	Max: 2.3	Mean: 2.3	Mov. Avg: 2.7
+save model to ./best
+Episode 359 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 2.7
+save model to ./best
+Episode 360 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 2.7
+save model to ./best
+Episode 361 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 2.6
+save model to ./best
+Episode 362 (8 sec)  -- 	Min: 2.7	Max: 2.7	Mean: 2.7	Mov. Avg: 2.6
+save model to ./best
+Episode 363 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 2.6
+save model to ./best
+Episode 364 (8 sec)  -- 	Min: 3.4	Max: 3.4	Mean: 3.4	Mov. Avg: 2.6
+save model to ./best
+Episode 365 (8 sec)  -- 	Min: 4.0	Max: 4.0	Mean: 4.0	Mov. Avg: 2.6
+save model to ./best
+Episode 366 (8 sec)  -- 	Min: 3.7	Max: 3.7	Mean: 3.7	Mov. Avg: 2.6
+save model to ./best
+Episode 367 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 2.6
+save model to ./best
+Episode 368 (8 sec)  -- 	Min: 4.4	Max: 4.4	Mean: 4.4	Mov. Avg: 2.6
+save model to ./best
+Episode 369 (8 sec)  -- 	Min: 5.4	Max: 5.4	Mean: 5.4	Mov. Avg: 2.7
+save model to ./best
+Episode 370 (8 sec)  -- 	Min: 3.9	Max: 3.9	Mean: 3.9	Mov. Avg: 2.7
+save model to ./best
+Episode 371 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 2.6
+save model to ./best
+Episode 372 (8 sec)  -- 	Min: 4.7	Max: 4.7	Mean: 4.7	Mov. Avg: 2.7
+save model to ./best
+Episode 373 (8 sec)  -- 	Min: 4.5	Max: 4.5	Mean: 4.5	Mov. Avg: 2.7
+save model to ./best
+Episode 374 (8 sec)  -- 	Min: 2.9	Max: 2.9	Mean: 2.9	Mov. Avg: 2.7
+save model to ./best
+Episode 375 (8 sec)  -- 	Min: 3.6	Max: 3.6	Mean: 3.6	Mov. Avg: 2.7
+save model to ./best
+Episode 376 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 2.7
+save model to ./best
+Episode 377 (8 sec)  -- 	Min: 2.9	Max: 2.9	Mean: 2.9	Mov. Avg: 2.6
+save model to ./best
+Episode 378 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 2.6
+save model to ./best
+Episode 379 (8 sec)  -- 	Min: 4.9	Max: 4.9	Mean: 4.9	Mov. Avg: 2.6
+save model to ./best
+Episode 380 (8 sec)  -- 	Min: 8.9	Max: 8.9	Mean: 8.9	Mov. Avg: 2.7
+save model to ./best
+Episode 381 (8 sec)  -- 	Min: 2.6	Max: 2.6	Mean: 2.6	Mov. Avg: 2.7
+save model to ./best
+Episode 382 (8 sec)  -- 	Min: 2.1	Max: 2.1	Mean: 2.1	Mov. Avg: 2.7
+save model to ./best
+Episode 383 (8 sec)  -- 	Min: 3.3	Max: 3.3	Mean: 3.3	Mov. Avg: 2.7
+save model to ./best
+Episode 384 (8 sec)  -- 	Min: 13.3	Max: 13.3	Mean: 13.3	Mov. Avg: 2.8
+save model to ./best
+Episode 385 (8 sec)  -- 	Min: 2.6	Max: 2.6	Mean: 2.6	Mov. Avg: 2.8
+save model to ./best
+Episode 386 (8 sec)  -- 	Min: 3.2	Max: 3.2	Mean: 3.2	Mov. Avg: 2.8
+save model to ./best
+Episode 387 (8 sec)  -- 	Min: 3.5	Max: 3.5	Mean: 3.5	Mov. Avg: 2.8
+save model to ./best
+Episode 388 (8 sec)  -- 	Min: 2.7	Max: 2.7	Mean: 2.7	Mov. Avg: 2.8
+save model to ./best
+Episode 389 (8 sec)  -- 	Min: 3.0	Max: 3.0	Mean: 3.0	Mov. Avg: 2.8
+save model to ./best
+Episode 390 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 2.8
+save model to ./best
+Episode 391 (8 sec)  -- 	Min: 3.8	Max: 3.8	Mean: 3.8	Mov. Avg: 2.8
+save model to ./best
+Episode 392 (8 sec)  -- 	Min: 3.3	Max: 3.3	Mean: 3.3	Mov. Avg: 2.8
+save model to ./best
+Episode 393 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 2.9
+save model to ./best
+Episode 394 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 2.9
+save model to ./best
+Episode 395 (8 sec)  -- 	Min: 3.1	Max: 3.1	Mean: 3.1	Mov. Avg: 2.9
+save model to ./best
+Episode 396 (8 sec)  -- 	Min: 2.5	Max: 2.5	Mean: 2.5	Mov. Avg: 2.9
+save model to ./best
+Episode 397 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.9
+save model to ./best
+Episode 398 (8 sec)  -- 	Min: 2.5	Max: 2.5	Mean: 2.5	Mov. Avg: 2.9
+save model to ./best
+Episode 399 (8 sec)  -- 	Min: 5.1	Max: 5.1	Mean: 5.1	Mov. Avg: 2.9
+save model to ./best
+Episode 400 (8 sec)  -- 	Min: 3.4	Max: 3.4	Mean: 3.4	Mov. Avg: 3.0
+save model to ./best
+Episode 401 (8 sec)  -- 	Min: 4.2	Max: 4.2	Mean: 4.2	Mov. Avg: 3.0
+save model to ./best
+Episode 402 (8 sec)  -- 	Min: 5.6	Max: 5.6	Mean: 5.6	Mov. Avg: 3.0
+save model to ./best
+Episode 403 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 3.0
+save model to ./best
+Episode 404 (8 sec)  -- 	Min: 4.3	Max: 4.3	Mean: 4.3	Mov. Avg: 3.0
+save model to ./best
+Episode 405 (8 sec)  -- 	Min: 9.3	Max: 9.3	Mean: 9.3	Mov. Avg: 3.1
+save model to ./best
+Episode 406 (8 sec)  -- 	Min: 3.9	Max: 3.9	Mean: 3.9	Mov. Avg: 3.1
+save model to ./best
+Episode 407 (8 sec)  -- 	Min: 5.2	Max: 5.2	Mean: 5.2	Mov. Avg: 3.2
+save model to ./best
+Episode 408 (8 sec)  -- 	Min: 5.2	Max: 5.2	Mean: 5.2	Mov. Avg: 3.2
+save model to ./best
+Episode 409 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 3.2
+save model to ./best
+Episode 410 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 3.2
+save model to ./best
+Episode 411 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 3.2
+save model to ./best
+Episode 412 (8 sec)  -- 	Min: 0.3	Max: 0.3	Mean: 0.3	Mov. Avg: 3.2
+save model to ./best
+Episode 413 (8 sec)  -- 	Min: 2.3	Max: 2.3	Mean: 2.3	Mov. Avg: 3.2
+save model to ./best
+Episode 414 (8 sec)  -- 	Min: 4.7	Max: 4.7	Mean: 4.7	Mov. Avg: 3.2
+save model to ./best
+Episode 415 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 3.2
+save model to ./best
+Episode 416 (8 sec)  -- 	Min: 4.6	Max: 4.6	Mean: 4.6	Mov. Avg: 3.2
+save model to ./best
+Episode 417 (8 sec)  -- 	Min: 2.7	Max: 2.7	Mean: 2.7	Mov. Avg: 3.2
+save model to ./best
+Episode 418 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 3.2
+save model to ./best
+Episode 419 (8 sec)  -- 	Min: 2.1	Max: 2.1	Mean: 2.1	Mov. Avg: 3.2
+save model to ./best
+Episode 420 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 3.2
+save model to ./best
+Episode 421 (8 sec)  -- 	Min: 4.0	Max: 4.0	Mean: 4.0	Mov. Avg: 3.2
+save model to ./best
+Episode 422 (8 sec)  -- 	Min: 6.2	Max: 6.2	Mean: 6.2	Mov. Avg: 3.2
+save model to ./best
+Episode 423 (8 sec)  -- 	Min: 3.1	Max: 3.1	Mean: 3.1	Mov. Avg: 3.2
+save model to ./best
+Episode 424 (8 sec)  -- 	Min: 2.6	Max: 2.6	Mean: 2.6	Mov. Avg: 3.2
+save model to ./best
+Episode 425 (8 sec)  -- 	Min: 3.3	Max: 3.3	Mean: 3.3	Mov. Avg: 3.2
+save model to ./best
+Episode 426 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 3.2
+save model to ./best
+Episode 427 (8 sec)  -- 	Min: 2.3	Max: 2.3	Mean: 2.3	Mov. Avg: 3.2
+save model to ./best
+Episode 428 (8 sec)  -- 	Min: 2.3	Max: 2.3	Mean: 2.3	Mov. Avg: 3.2
+save model to ./best
+Episode 429 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 3.2
+save model to ./best
+Episode 430 (8 sec)  -- 	Min: 4.8	Max: 4.8	Mean: 4.8	Mov. Avg: 3.2
+save model to ./best
+Episode 431 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 3.2
+save model to ./best
+Episode 432 (8 sec)  -- 	Min: 3.3	Max: 3.3	Mean: 3.3	Mov. Avg: 3.2
+save model to ./best
+Episode 433 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 3.2
+save model to ./best
+Episode 434 (8 sec)  -- 	Min: 7.2	Max: 7.2	Mean: 7.2	Mov. Avg: 3.2
+save model to ./best
+Episode 435 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 3.2
+save model to ./best
+Episode 436 (8 sec)  -- 	Min: 2.7	Max: 2.7	Mean: 2.7	Mov. Avg: 3.2
+save model to ./best
+Episode 437 (8 sec)  -- 	Min: 2.7	Max: 2.7	Mean: 2.7	Mov. Avg: 3.2
+save model to ./best
+Episode 438 (8 sec)  -- 	Min: 3.1	Max: 3.1	Mean: 3.1	Mov. Avg: 3.2
+save model to ./best
+Episode 439 (8 sec)  -- 	Min: 3.2	Max: 3.2	Mean: 3.2	Mov. Avg: 3.2
+save model to ./best
+Episode 440 (8 sec)  -- 	Min: 6.0	Max: 6.0	Mean: 6.0	Mov. Avg: 3.2
+save model to ./best
+Episode 441 (8 sec)  -- 	Min: 5.6	Max: 5.6	Mean: 5.6	Mov. Avg: 3.2
+save model to ./best
+Episode 442 (8 sec)  -- 	Min: 2.5	Max: 2.5	Mean: 2.5	Mov. Avg: 3.2
+save model to ./best
+Episode 443 (8 sec)  -- 	Min: 2.8	Max: 2.8	Mean: 2.8	Mov. Avg: 3.2
+save model to ./best
+Episode 444 (8 sec)  -- 	Min: 2.6	Max: 2.6	Mean: 2.6	Mov. Avg: 3.2
+save model to ./best
+Episode 445 (8 sec)  -- 	Min: 3.6	Max: 3.6	Mean: 3.6	Mov. Avg: 3.2
+save model to ./best
+Episode 446 (8 sec)  -- 	Min: 3.9	Max: 3.9	Mean: 3.9	Mov. Avg: 3.2
+save model to ./best
+Episode 447 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 3.2
+save model to ./best
+Episode 448 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 3.2
+save model to ./best
+Episode 449 (8 sec)  -- 	Min: 3.8	Max: 3.8	Mean: 3.8	Mov. Avg: 3.2
+save model to ./best
+Episode 450 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 3.2
+save model to ./best
+Episode 451 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 3.2
+save model to ./best
+Episode 452 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 3.2
+save model to ./best
+Episode 453 (8 sec)  -- 	Min: 2.1	Max: 2.1	Mean: 2.1	Mov. Avg: 3.2
+save model to ./best
+Episode 454 (8 sec)  -- 	Min: 0.3	Max: 0.3	Mean: 0.3	Mov. Avg: 3.2
+save model to ./best
+Episode 455 (8 sec)  -- 	Min: 2.8	Max: 2.8	Mean: 2.8	Mov. Avg: 3.1
+save model to ./best
+Episode 456 (8 sec)  -- 	Min: 2.1	Max: 2.1	Mean: 2.1	Mov. Avg: 3.1
+save model to ./best
+Episode 457 (8 sec)  -- 	Min: 2.5	Max: 2.5	Mean: 2.5	Mov. Avg: 3.1
+save model to ./best
+Episode 458 (8 sec)  -- 	Min: 0.6	Max: 0.6	Mean: 0.6	Mov. Avg: 3.1
+save model to ./best
+Episode 459 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 3.1
+save model to ./best
+Episode 460 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 3.1
+save model to ./best
+Episode 461 (8 sec)  -- 	Min: 3.9	Max: 3.9	Mean: 3.9	Mov. Avg: 3.2
+save model to ./best
+Episode 462 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 3.2
+save model to ./best
+Episode 463 (8 sec)  -- 	Min: 4.9	Max: 4.9	Mean: 4.9	Mov. Avg: 3.2
+save model to ./best
+Episode 464 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 3.2
+save model to ./best
+Episode 465 (8 sec)  -- 	Min: 2.7	Max: 2.7	Mean: 2.7	Mov. Avg: 3.2
+save model to ./best
+Episode 466 (8 sec)  -- 	Min: 4.6	Max: 4.6	Mean: 4.6	Mov. Avg: 3.2
+save model to ./best
+Episode 467 (8 sec)  -- 	Min: 2.6	Max: 2.6	Mean: 2.6	Mov. Avg: 3.2
+save model to ./best
+Episode 468 (8 sec)  -- 	Min: 2.7	Max: 2.7	Mean: 2.7	Mov. Avg: 3.2
+save model to ./best
+Episode 469 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 3.1
+save model to ./best
+Episode 470 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 3.1
+save model to ./best
+Episode 471 (8 sec)  -- 	Min: 3.2	Max: 3.2	Mean: 3.2	Mov. Avg: 3.1
+save model to ./best
+Episode 472 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 3.1
+save model to ./best
+Episode 473 (8 sec)  -- 	Min: 4.6	Max: 4.6	Mean: 4.6	Mov. Avg: 3.1
+save model to ./best
+Episode 474 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 3.1
+save model to ./best
+Episode 475 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 3.1
+save model to ./best
+Episode 476 (8 sec)  -- 	Min: 3.2	Max: 3.2	Mean: 3.2	Mov. Avg: 3.1
+save model to ./best
+Episode 477 (8 sec)  -- 	Min: 4.0	Max: 4.0	Mean: 4.0	Mov. Avg: 3.1
+save model to ./best
+Episode 478 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 3.1
+save model to ./best
+Episode 479 (8 sec)  -- 	Min: 5.3	Max: 5.3	Mean: 5.3	Mov. Avg: 3.1
+save model to ./best
+Episode 480 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 3.0
+save model to ./best
+Episode 481 (8 sec)  -- 	Min: 3.0	Max: 3.0	Mean: 3.0	Mov. Avg: 3.0
+save model to ./best
+Episode 482 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 3.0
+save model to ./best
+Episode 483 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 3.0
+save model to ./best
+Episode 484 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 2.9
+save model to ./best
+Episode 485 (8 sec)  -- 	Min: 2.7	Max: 2.7	Mean: 2.7	Mov. Avg: 2.9
+save model to ./best
+Episode 486 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 2.9
+save model to ./best
+Episode 487 (8 sec)  -- 	Min: 3.3	Max: 3.3	Mean: 3.3	Mov. Avg: 2.9
+save model to ./best
+Episode 488 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 2.9
+save model to ./best
+Episode 489 (8 sec)  -- 	Min: 3.4	Max: 3.4	Mean: 3.4	Mov. Avg: 2.9
+save model to ./best
+Episode 490 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 2.9
+save model to ./best
+Episode 491 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 2.8
+save model to ./best
+Episode 492 (8 sec)  -- 	Min: 3.1	Max: 3.1	Mean: 3.1	Mov. Avg: 2.8
+save model to ./best
+Episode 493 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 2.8
+save model to ./best
+Episode 494 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 2.8
+save model to ./best
+Episode 495 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 2.8
+save model to ./best
+Episode 496 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 2.8
+save model to ./best
+Episode 497 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 2.8
+save model to ./best
+Episode 498 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 2.8
+save model to ./best
+Episode 499 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 2.8
+save model to ./best
+Episode 500 (8 sec)  -- 	Min: 3.2	Max: 3.2	Mean: 3.2	Mov. Avg: 2.8
+save model to ./best
+Episode 501 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 2.7
+save model to ./best
+Episode 502 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.7
+save model to ./best
+Episode 503 (8 sec)  -- 	Min: 4.2	Max: 4.2	Mean: 4.2	Mov. Avg: 2.7
+save model to ./best
+Episode 504 (8 sec)  -- 	Min: 2.8	Max: 2.8	Mean: 2.8	Mov. Avg: 2.7
+save model to ./best
+Episode 505 (8 sec)  -- 	Min: 3.7	Max: 3.7	Mean: 3.7	Mov. Avg: 2.6
+save model to ./best
+Episode 506 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 2.6
+save model to ./best
+Episode 507 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 2.6
+save model to ./best
+Episode 508 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 2.5
+save model to ./best
+Episode 509 (8 sec)  -- 	Min: 2.1	Max: 2.1	Mean: 2.1	Mov. Avg: 2.5
+save model to ./best
+Episode 510 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 2.5
+save model to ./best
+Episode 511 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 2.5
+save model to ./best
+Episode 512 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 2.6
+save model to ./best
+Episode 513 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 2.6
+save model to ./best
+Episode 514 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 2.5
+save model to ./best
+Episode 515 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 2.5
+save model to ./best
+Episode 516 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 2.5
+save model to ./best
+Episode 517 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 2.5
+save model to ./best
+Episode 518 (8 sec)  -- 	Min: 2.1	Max: 2.1	Mean: 2.1	Mov. Avg: 2.5
+save model to ./best
+Episode 519 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 2.5
+save model to ./best
+Episode 520 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 2.5
+save model to ./best
+Episode 521 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 2.5
+save model to ./best
+Episode 522 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.4
+save model to ./best
+Episode 523 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 2.4
+save model to ./best
+Episode 524 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 2.4
+save model to ./best
+Episode 525 (8 sec)  -- 	Min: 3.5	Max: 3.5	Mean: 3.5	Mov. Avg: 2.4
+save model to ./best
+Episode 526 (8 sec)  -- 	Min: 0.6	Max: 0.6	Mean: 0.6	Mov. Avg: 2.4
+save model to ./best
+Episode 527 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 2.4
+save model to ./best
+Episode 528 (8 sec)  -- 	Min: 2.9	Max: 2.9	Mean: 2.9	Mov. Avg: 2.4
+save model to ./best
+Episode 529 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 2.4
+save model to ./best
+Episode 530 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 2.3
+save model to ./best
+Episode 531 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.4
+save model to ./best
+Episode 532 (8 sec)  -- 	Min: 3.1	Max: 3.1	Mean: 3.1	Mov. Avg: 2.4
+save model to ./best
+Episode 533 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 2.4
+save model to ./best
+Episode 534 (8 sec)  -- 	Min: 2.8	Max: 2.8	Mean: 2.8	Mov. Avg: 2.3
+save model to ./best
+Episode 535 (8 sec)  -- 	Min: 0.3	Max: 0.3	Mean: 0.3	Mov. Avg: 2.3
+save model to ./best
+Episode 536 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 2.3
+save model to ./best
+Episode 537 (8 sec)  -- 	Min: 3.2	Max: 3.2	Mean: 3.2	Mov. Avg: 2.3
+save model to ./best
+Episode 538 (8 sec)  -- 	Min: 4.5	Max: 4.5	Mean: 4.5	Mov. Avg: 2.3
+save model to ./best
+Episode 539 (8 sec)  -- 	Min: 4.9	Max: 4.9	Mean: 4.9	Mov. Avg: 2.3
+save model to ./best
+Episode 540 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 2.3
+save model to ./best
+Episode 541 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 2.2
+save model to ./best
+Episode 542 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 2.2
+save model to ./best
+Episode 543 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 2.2
+save model to ./best
+Episode 544 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 2.2
+save model to ./best
+Episode 545 (8 sec)  -- 	Min: 5.5	Max: 5.5	Mean: 5.5	Mov. Avg: 2.2
+save model to ./best
+Episode 546 (8 sec)  -- 	Min: 2.5	Max: 2.5	Mean: 2.5	Mov. Avg: 2.2
+save model to ./best
+Episode 547 (8 sec)  -- 	Min: 3.0	Max: 3.0	Mean: 3.0	Mov. Avg: 2.2
+save model to ./best
+Episode 548 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 2.2
+save model to ./best
+Episode 549 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 2.2
+save model to ./best
+Episode 550 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.2
+save model to ./best
+Episode 551 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.2
+save model to ./best
+Episode 552 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.2
+save model to ./best
+Episode 553 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.2
+save model to ./best
+Episode 554 (8 sec)  -- 	Min: 6.5	Max: 6.5	Mean: 6.5	Mov. Avg: 2.3
+save model to ./best
+Episode 555 (8 sec)  -- 	Min: 2.1	Max: 2.1	Mean: 2.1	Mov. Avg: 2.3
+save model to ./best
+Episode 556 (8 sec)  -- 	Min: 2.9	Max: 2.9	Mean: 2.9	Mov. Avg: 2.3
+save model to ./best
+Episode 557 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 2.3
+save model to ./best
+Episode 558 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 2.3
+save model to ./best
+Episode 559 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.3
+save model to ./best
+Episode 560 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 2.3
+save model to ./best
+Episode 561 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 2.3
+save model to ./best
+Episode 562 (8 sec)  -- 	Min: 2.3	Max: 2.3	Mean: 2.3	Mov. Avg: 2.3
+save model to ./best
+Episode 563 (8 sec)  -- 	Min: 3.3	Max: 3.3	Mean: 3.3	Mov. Avg: 2.3
+save model to ./best
+Episode 564 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 2.3
+save model to ./best
+Episode 565 (8 sec)  -- 	Min: 3.6	Max: 3.6	Mean: 3.6	Mov. Avg: 2.3
+save model to ./best
+Episode 566 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 2.2
+save model to ./best
+Episode 567 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 2.2
+save model to ./best
+Episode 568 (8 sec)  -- 	Min: 2.5	Max: 2.5	Mean: 2.5	Mov. Avg: 2.2
+save model to ./best
+Episode 569 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 2.2
+save model to ./best
+Episode 570 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 2.2
+save model to ./best
+Episode 571 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 2.2
+save model to ./best
+Episode 572 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 2.2
+save model to ./best
+Episode 573 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 2.2
+save model to ./best
+Episode 574 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 2.1
+save model to ./best
+Episode 575 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 2.1
+save model to ./best
+Episode 576 (8 sec)  -- 	Min: 2.7	Max: 2.7	Mean: 2.7	Mov. Avg: 2.1
+save model to ./best
+Episode 577 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.1
+save model to ./best
+Episode 578 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 2.1
+save model to ./best
+Episode 579 (8 sec)  -- 	Min: 2.9	Max: 2.9	Mean: 2.9	Mov. Avg: 2.1
+save model to ./best
+Episode 580 (8 sec)  -- 	Min: 2.8	Max: 2.8	Mean: 2.8	Mov. Avg: 2.1
+save model to ./best
+Episode 581 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 2.1
+save model to ./best
+Episode 582 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 2.1
+save model to ./best
+Episode 583 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 2.1
+save model to ./best
+Episode 584 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 2.1
+save model to ./best
+Episode 585 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.1
+save model to ./best
+Episode 586 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 2.0
+save model to ./best
+Episode 587 (8 sec)  -- 	Min: 4.3	Max: 4.3	Mean: 4.3	Mov. Avg: 2.1
+save model to ./best
+Episode 588 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 2.1
+save model to ./best
+Episode 589 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 2.0
+save model to ./best
+Episode 590 (8 sec)  -- 	Min: 0.3	Max: 0.3	Mean: 0.3	Mov. Avg: 2.0
+save model to ./best
+Episode 591 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 2.0
+save model to ./best
+Episode 592 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 2.0
+save model to ./best
+Episode 593 (8 sec)  -- 	Min: 2.5	Max: 2.5	Mean: 2.5	Mov. Avg: 2.0
+save model to ./best
+Episode 594 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 2.0
+save model to ./best
+Episode 595 (8 sec)  -- 	Min: 2.4	Max: 2.4	Mean: 2.4	Mov. Avg: 2.0
+save model to ./best
+Episode 596 (8 sec)  -- 	Min: 2.3	Max: 2.3	Mean: 2.3	Mov. Avg: 2.0
+save model to ./best
+Episode 597 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 2.0
+save model to ./best
+Episode 598 (8 sec)  -- 	Min: 2.9	Max: 2.9	Mean: 2.9	Mov. Avg: 2.1
+save model to ./best
+Episode 599 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 2.0
+save model to ./best
+Episode 600 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 2.0
+save model to ./best
+Episode 601 (8 sec)  -- 	Min: 2.1	Max: 2.1	Mean: 2.1	Mov. Avg: 2.0
+save model to ./best
+Episode 602 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 2.0
+save model to ./best
+Episode 603 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 2.0
+save model to ./best
+Episode 604 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 2.0
+save model to ./best
+Episode 605 (8 sec)  -- 	Min: 0.2	Max: 0.2	Mean: 0.2	Mov. Avg: 1.9
+save model to ./best
+Episode 606 (8 sec)  -- 	Min: 0.6	Max: 0.6	Mean: 0.6	Mov. Avg: 1.9
+save model to ./best
+Episode 607 (8 sec)  -- 	Min: 0.2	Max: 0.2	Mean: 0.2	Mov. Avg: 1.9
+save model to ./best
+Episode 608 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 1.9
+save model to ./best
+Episode 609 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 1.9
+save model to ./best
+Episode 610 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 1.9
+save model to ./best
+Episode 611 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 1.9
+save model to ./best
+Episode 612 (8 sec)  -- 	Min: 3.4	Max: 3.4	Mean: 3.4	Mov. Avg: 1.9
+save model to ./best
+Episode 613 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 1.9
+save model to ./best
+Episode 614 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 1.9
+save model to ./best
+Episode 615 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 1.9
+save model to ./best
+Episode 616 (8 sec)  -- 	Min: 2.8	Max: 2.8	Mean: 2.8	Mov. Avg: 2.0
+save model to ./best
+Episode 617 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 1.9
+save model to ./best
+Episode 618 (8 sec)  -- 	Min: 9.9	Max: 9.9	Mean: 9.9	Mov. Avg: 2.0
+save model to ./best
+Episode 619 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 2.0
+save model to ./best
+Episode 620 (8 sec)  -- 	Min: 2.9	Max: 2.9	Mean: 2.9	Mov. Avg: 2.0
+save model to ./best
+Episode 621 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 2.0
+save model to ./best
+Episode 622 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 2.0
+save model to ./best
+Episode 623 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 2.0
+save model to ./best
+Episode 624 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 2.0
+save model to ./best
+Episode 625 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 2.0
+save model to ./best
+Episode 626 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 2.0
+save model to ./best
+Episode 627 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 2.0
+save model to ./best
+Episode 628 (8 sec)  -- 	Min: 0.6	Max: 0.6	Mean: 0.6	Mov. Avg: 1.9
+save model to ./best
+Episode 629 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 1.9
+save model to ./best
+Episode 630 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 2.0
+save model to ./best
+Episode 631 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 1.9
+save model to ./best
+Episode 632 (8 sec)  -- 	Min: 2.9	Max: 2.9	Mean: 2.9	Mov. Avg: 1.9
+save model to ./best
+Episode 633 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 2.0
+save model to ./best
+Episode 634 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 1.9
+save model to ./best
+Episode 635 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 2.0
+save model to ./best
+Episode 636 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 2.0
+save model to ./best
+Episode 637 (8 sec)  -- 	Min: 2.5	Max: 2.5	Mean: 2.5	Mov. Avg: 2.0
+save model to ./best
+Episode 638 (8 sec)  -- 	Min: 2.1	Max: 2.1	Mean: 2.1	Mov. Avg: 1.9
+save model to ./best
+Episode 639 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 1.9
+save model to ./best
+Episode 640 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 1.9
+save model to ./best
+Episode 641 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 1.9
+save model to ./best
+Episode 642 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 1.9
+save model to ./best
+Episode 643 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 1.9
+save model to ./best
+Episode 644 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 1.9
+save model to ./best
+Episode 645 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 1.8
+save model to ./best
+Episode 646 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 1.8
+save model to ./best
+Episode 647 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 1.8
+save model to ./best
+Episode 648 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 1.8
+save model to ./best
+Episode 649 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 1.8
+save model to ./best
+Episode 650 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 1.8
+save model to ./best
+Episode 651 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 1.8
+save model to ./best
+Episode 652 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 1.8
+save model to ./best
+Episode 653 (8 sec)  -- 	Min: 2.3	Max: 2.3	Mean: 2.3	Mov. Avg: 1.8
+save model to ./best
+Episode 654 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 1.7
+save model to ./best
+Episode 655 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 1.7
+save model to ./best
+Episode 656 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 1.7
+save model to ./best
+Episode 657 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 1.7
+save model to ./best
+Episode 658 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 1.7
+save model to ./best
+Episode 659 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 1.7
+save model to ./best
+Episode 660 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 1.7
+save model to ./best
+Episode 661 (8 sec)  -- 	Min: 0.6	Max: 0.6	Mean: 0.6	Mov. Avg: 1.7
+save model to ./best
+Episode 662 (8 sec)  -- 	Min: 0.6	Max: 0.6	Mean: 0.6	Mov. Avg: 1.7
+save model to ./best
+Episode 663 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 1.7
+save model to ./best
+Episode 664 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 1.6
+save model to ./best
+Episode 665 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 1.6
+save model to ./best
+Episode 666 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 1.6
+save model to ./best
+Episode 667 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 1.6
+save model to ./best
+Episode 668 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 1.6
+save model to ./best
+Episode 669 (8 sec)  -- 	Min: 5.3	Max: 5.3	Mean: 5.3	Mov. Avg: 1.6
+save model to ./best
+Episode 670 (8 sec)  -- 	Min: 4.3	Max: 4.3	Mean: 4.3	Mov. Avg: 1.7
+save model to ./best
+Episode 671 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 1.7
+save model to ./best
+Episode 672 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 1.7
+save model to ./best
+Episode 673 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 1.7
+save model to ./best
+Episode 674 (8 sec)  -- 	Min: 2.5	Max: 2.5	Mean: 2.5	Mov. Avg: 1.7
+save model to ./best
+Episode 675 (8 sec)  -- 	Min: 2.8	Max: 2.8	Mean: 2.8	Mov. Avg: 1.7
+save model to ./best
+Episode 676 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 1.7
+save model to ./best
+Episode 677 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 1.7
+save model to ./best
+Episode 678 (8 sec)  -- 	Min: 1.7	Max: 1.7	Mean: 1.7	Mov. Avg: 1.7
+save model to ./best
+Episode 679 (8 sec)  -- 	Min: 3.6	Max: 3.6	Mean: 3.6	Mov. Avg: 1.7
+save model to ./best
+Episode 680 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 1.7
+save model to ./best
+Episode 681 (8 sec)  -- 	Min: 3.2	Max: 3.2	Mean: 3.2	Mov. Avg: 1.7
+save model to ./best
+Episode 682 (8 sec)  -- 	Min: 0.6	Max: 0.6	Mean: 0.6	Mov. Avg: 1.7
+save model to ./best
+Episode 683 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 1.7
+save model to ./best
+Episode 684 (8 sec)  -- 	Min: 4.4	Max: 4.4	Mean: 4.4	Mov. Avg: 1.7
+save model to ./best
+Episode 685 (8 sec)  -- 	Min: 2.1	Max: 2.1	Mean: 2.1	Mov. Avg: 1.7
+save model to ./best
+Episode 686 (8 sec)  -- 	Min: 0.0	Max: 0.0	Mean: 0.0	Mov. Avg: 1.7
+save model to ./best
+Episode 687 (8 sec)  -- 	Min: 0.0	Max: 0.0	Mean: 0.0	Mov. Avg: 1.7
+save model to ./best
+Episode 688 (8 sec)  -- 	Min: 3.0	Max: 3.0	Mean: 3.0	Mov. Avg: 1.7
+save model to ./best
+Episode 689 (8 sec)  -- 	Min: 0.2	Max: 0.2	Mean: 0.2	Mov. Avg: 1.7
+save model to ./best
+Episode 690 (8 sec)  -- 	Min: 0.8	Max: 0.8	Mean: 0.8	Mov. Avg: 1.7
+save model to ./best
+Episode 691 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 1.7
+save model to ./best
+Episode 692 (8 sec)  -- 	Min: 1.5	Max: 1.5	Mean: 1.5	Mov. Avg: 1.7
+save model to ./best
+Episode 693 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 1.7
+save model to ./best
+Episode 694 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 1.7
+save model to ./best
+Episode 695 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 1.6
+save model to ./best
+Episode 696 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 1.6
+save model to ./best
+Episode 697 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 1.6
+save model to ./best
+Episode 698 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 1.6
+save model to ./best
+Episode 699 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 1.6
+save model to ./best
+Episode 700 (8 sec)  -- 	Min: 1.6	Max: 1.6	Mean: 1.6	Mov. Avg: 1.6
+save model to ./best
+Episode 701 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 1.6
+save model to ./best
+Episode 702 (8 sec)  -- 	Min: 3.6	Max: 3.6	Mean: 3.6	Mov. Avg: 1.6
+save model to ./best
+Episode 703 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 1.6
+save model to ./best
+Episode 704 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 1.6
+save model to ./best
+Episode 705 (8 sec)  -- 	Min: 0.1	Max: 0.1	Mean: 0.1	Mov. Avg: 1.6
+save model to ./best
+Episode 706 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 1.6
+save model to ./best
+Episode 707 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 1.7
+save model to ./best
+Episode 708 (8 sec)  -- 	Min: 0.6	Max: 0.6	Mean: 0.6	Mov. Avg: 1.6
+save model to ./best
+Episode 709 (8 sec)  -- 	Min: 0.6	Max: 0.6	Mean: 0.6	Mov. Avg: 1.6
+save model to ./best
+Episode 710 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 1.6
+save model to ./best
+Episode 711 (8 sec)  -- 	Min: 0.2	Max: 0.2	Mean: 0.2	Mov. Avg: 1.6
+save model to ./best
+Episode 712 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 1.6
+save model to ./best
+Episode 713 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 1.6
+save model to ./best
+Episode 714 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 1.6
+save model to ./best
+Episode 715 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 1.6
+save model to ./best
+Episode 716 (8 sec)  -- 	Min: 1.8	Max: 1.8	Mean: 1.8	Mov. Avg: 1.6
+save model to ./best
+Episode 717 (8 sec)  -- 	Min: 0.2	Max: 0.2	Mean: 0.2	Mov. Avg: 1.6
+save model to ./best
+Episode 718 (8 sec)  -- 	Min: 0.9	Max: 0.9	Mean: 0.9	Mov. Avg: 1.5
+save model to ./best
+Episode 719 (8 sec)  -- 	Min: 0.6	Max: 0.6	Mean: 0.6	Mov. Avg: 1.5
+save model to ./best
+Episode 720 (8 sec)  -- 	Min: 2.0	Max: 2.0	Mean: 2.0	Mov. Avg: 1.5
+save model to ./best
+Episode 721 (8 sec)  -- 	Min: 0.1	Max: 0.1	Mean: 0.1	Mov. Avg: 1.4
+save model to ./best
+Episode 722 (8 sec)  -- 	Min: 1.2	Max: 1.2	Mean: 1.2	Mov. Avg: 1.5
+save model to ./best
+Episode 723 (8 sec)  -- 	Min: 1.9	Max: 1.9	Mean: 1.9	Mov. Avg: 1.5
+save model to ./best
+Episode 724 (8 sec)  -- 	Min: 0.2	Max: 0.2	Mean: 0.2	Mov. Avg: 1.5
+save model to ./best
+Episode 725 (8 sec)  -- 	Min: 2.1	Max: 2.1	Mean: 2.1	Mov. Avg: 1.5
+save model to ./best
+Episode 726 (8 sec)  -- 	Min: 0.7	Max: 0.7	Mean: 0.7	Mov. Avg: 1.5
+save model to ./best
+Episode 727 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 1.5
+save model to ./best
+Episode 728 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 1.5
+save model to ./best
+Episode 729 (8 sec)  -- 	Min: 0.3	Max: 0.3	Mean: 0.3	Mov. Avg: 1.5
+save model to ./best
+Episode 730 (8 sec)  -- 	Min: 1.3	Max: 1.3	Mean: 1.3	Mov. Avg: 1.5
+save model to ./best
+Episode 731 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 1.4
+save model to ./best
+Episode 732 (8 sec)  -- 	Min: 1.0	Max: 1.0	Mean: 1.0	Mov. Avg: 1.4
+save model to ./best
+Episode 733 (8 sec)  -- 	Min: 0.3	Max: 0.3	Mean: 0.3	Mov. Avg: 1.4
+save model to ./best
+Episode 734 (8 sec)  -- 	Min: 1.4	Max: 1.4	Mean: 1.4	Mov. Avg: 1.4
+save model to ./best
+Episode 735 (8 sec)  -- 	Min: 2.2	Max: 2.2	Mean: 2.2	Mov. Avg: 1.4
+save model to ./best
+Episode 736 (8 sec)  -- 	Min: 0.4	Max: 0.4	Mean: 0.4	Mov. Avg: 1.4
+save model to ./best
+Episode 737 (8 sec)  -- 	Min: 1.1	Max: 1.1	Mean: 1.1	Mov. Avg: 1.4
+save model to ./best
+Episode 738 (8 sec)  -- 	Min: 0.5	Max: 0.5	Mean: 0.5	Mov. Avg: 1.4
+save model to ./best
+Episode 739 (8 sec)  -- 	Min: 2.3	Max: 2.3	Mean: 2.3	Mov. Avg: 1.4
+save model to
