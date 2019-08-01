@@ -28,6 +28,8 @@ def env_step(env, actions, brain_name):
     return next_states, rewards, dones
 
 def train(env, agent, brain_name, train_mode=True):
+    LEARN_EVERY = 20        # learning timestep interval
+    LEARN_NUM = 10          # number of learning passes
     solved_score=30.0
     consec_episodes=100
     print_every=1
@@ -45,7 +47,7 @@ def train(env, agent, brain_name, train_mode=True):
         scores = 0      
         start_time = time.time()   
         agent.ep_step += 1        
-        for _ in range(episode_max_frames):
+        for t in range(episode_max_frames):
             # use policy make action
             actions = agent.act(states.reshape(-1)) 
             # actions = act()
@@ -64,7 +66,9 @@ def train(env, agent, brain_name, train_mode=True):
             if np.any(dones):                                  
                 break
 
-            agent.update()  
+            if (t+1) % LEARN_EVERY == 0:
+                for _ in range(LEARN_NUM):
+                    agent.update()  
 
         #############################Boring Log#############################
         ####################################################################  
