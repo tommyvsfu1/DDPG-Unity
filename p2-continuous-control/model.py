@@ -52,7 +52,7 @@ class MLP(nn.Module):
 
 
 class Actor(nn.Module):   # ae(s)=a
-    def __init__(self,s_dim,action_size, fc1_units=300, fc2_units=400):
+    def __init__(self,s_dim,action_size, fc1_units=400, fc2_units=400):
         super(Actor,self).__init__()
         self.fc1 = nn.Linear(s_dim, fc1_units)
         self.bn1 = nn.BatchNorm1d(fc1_units)
@@ -74,7 +74,7 @@ class Actor(nn.Module):   # ae(s)=a
         return torch.tanh(self.fc3(x))
 
 class Critic(nn.Module):   # ae(s)=a
-    def __init__(self,state_size,action_size, fcs1_units=300, fc2_units=400):
+    def __init__(self,state_size,action_size, fcs1_units=400, fc2_units=400):
         super(Critic,self).__init__()
         self.fcs1 = nn.Linear(state_size, fcs1_units)
         self.bn1 = nn.BatchNorm1d(fcs1_units)
