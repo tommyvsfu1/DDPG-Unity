@@ -31,3 +31,4 @@ class Noise(object):
         drift = self.ou_a * (self.ou_mu - prev_ou_level) * self.delta
         randomness = self.brownian_motion_log_returns()
         return prev_ou_level + drift + randomness
+

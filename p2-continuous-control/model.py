@@ -69,7 +69,7 @@ class Actor(nn.Module):   # ae(s)=a
     def forward(self, state):
         """Build an actor (policy) network that maps states -> actions."""
         # x = F.relu(self.bn1(self.fc1(state)))
-        x = F.relu(self.fc1(state))
+        x = F.relu(self.bn1(self.fc1(state)))
         x = F.relu(self.fc2(x))
         return torch.tanh(self.fc3(x))
 

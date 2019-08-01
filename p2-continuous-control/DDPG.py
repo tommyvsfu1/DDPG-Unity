@@ -3,7 +3,7 @@ from model import Actor, Critic
 from utils import ReplayBuffer, soft_update
 from noise import Noise
 import numpy as np
-
+from logger import TensorboardLogger
 
 DELTA = 0.5 # The rate of change (time)
 SIGMA = 0.5 # Volatility of the stochastic processes
@@ -26,7 +26,7 @@ class Agent(object):
 
         self.loss_td = torch.nn.MSELoss()
         self.replay_buffer = ReplayBuffer()
-        self.batch_size = 32
+        self.batch_size = 128
         self.gamma = 0.99
         self.discrete = False
         self.ep_step = 0
@@ -37,6 +37,10 @@ class Agent(object):
         self.ou_level = 0.
         self.action_low = -clip_value
         self.action_high = clip_value
+
+        # log
+        self.tensorboard = TensorboardLogger('./p2')
+
     def act(self, state, test=False):
         """
         Return : (1, action_dim) np.array
@@ -44,12 +48,19 @@ class Agent(object):
         if not test:
             with torch.no_grad():
                 # boring type casting
+                self.P_online.eval()
                 state = ((torch.from_numpy(state)).unsqueeze(0)).float().to(self.device)
                 action = self.P_online(state) # continuous output
+                self.P_online.train()
                 a = action.data.cpu().numpy()   
                 if self.ep_step < 200:
                     self.ou_level = self.noise.ornstein_uhlenbeck_level(self.ou_level)
                 action = np.clip(a + self.ou_level,self.action_low,self.action_high)
+                self.tensorboard.scalar_summary("action_0", action[0][0], self.tensorboard.time_step)
+                self.tensorboard.scalar_summary("action_1", action[0][1], self.tensorboard.time_step)
+                self.tensorboard.scalar_summary("action_2", action[0][2], self.tensorboard.time_step)
+                self.tensorboard.scalar_summary("action_3", action[0][3], self.tensorboard.time_step)
+                self.tensorboard.step_update()
                 return action
 
     def collect_data(self, state, action, reward, next_state, done):
@@ -77,11 +88,14 @@ class Agent(object):
 
         #===============================Critic Update===============================
         with torch.no_grad():
+            self.P_target.eval()
+            self.Q_target.eval()
             target = rewards+ self.gamma * (1-dones) * self.Q_target((next_states, self.P_target(next_states)))  
         Q = self.Q_online((states,actions))
         td_error = self.loss_td(Q, target)
         self.q_optimizer.zero_grad()
         td_error.backward()
+        torch.nn.utils.clip_grad_norm_(self.Q_online.parameters(), 1)
         self.q_optimizer.step()
 
         #===============================Actor Update===============================
