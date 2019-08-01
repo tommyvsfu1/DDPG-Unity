@@ -20,8 +20,8 @@ class Agent(object):
         self.Q_online = Critic(s_dim,a_dim).to(device)
         self.Q_target = Critic(s_dim,a_dim).to(device)
         self.Q_target.load_state_dict(self.Q_online.state_dict())
-        self.q_optimizer = torch.optim.Adam(self.Q_online.parameters(),lr=3e-3)
-        self.p_optimizer = torch.optim.Adam(self.P_online.parameters(),lr=3e-3)
+        self.q_optimizer = torch.optim.Adam(self.Q_online.parameters(),lr=1e-3)
+        self.p_optimizer = torch.optim.Adam(self.P_online.parameters(),lr=1e-3)
 
 
         self.loss_td = torch.nn.MSELoss()

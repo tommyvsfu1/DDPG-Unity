@@ -52,7 +52,7 @@ class MLP(nn.Module):
 
 
 class Actor(nn.Module):   # ae(s)=a
-    def __init__(self,s_dim,action_size, fc1_units=256, fc2_units=256):
+    def __init__(self,s_dim,action_size, fc1_units=300, fc2_units=400):
         super(Actor,self).__init__()
         self.fc1 = nn.Linear(s_dim, fc1_units)
         self.bn1 = nn.BatchNorm1d(fc1_units)
@@ -61,11 +61,7 @@ class Actor(nn.Module):   # ae(s)=a
         self.reset_parameters()
 
     def reset_parameters(self):
-        with torch.no_grad():
-            self.fc1.bias.copy_(torch.tensor([0.03]))
-            self.fc2.bias.copy_(torch.tensor([0.03]))
-            self.fc3.bias.copy_(torch.tensor([0.03]))
-            
+        pass            
         # self.fc1.weight.data.uniform_(*hidden_init(self.fc1))
         # self.fc2.weight.data.uniform_(*hidden_init(self.fc2))
         # self.fc3.weight.data.uniform_(*hidden_init(self.fc3))
@@ -78,7 +74,7 @@ class Actor(nn.Module):   # ae(s)=a
         return torch.tanh(self.fc3(x))
 
 class Critic(nn.Module):   # ae(s)=a
-    def __init__(self,state_size,action_size, fcs1_units=256, fc2_units=256):
+    def __init__(self,state_size,action_size, fcs1_units=300, fc2_units=400):
         super(Critic,self).__init__()
         self.fcs1 = nn.Linear(state_size, fcs1_units)
         self.bn1 = nn.BatchNorm1d(fcs1_units)
@@ -90,12 +86,7 @@ class Critic(nn.Module):   # ae(s)=a
         self.reset_parameters()
 
     def reset_parameters(self):
-        with torch.no_grad():
-            self.fcs1.bias.copy_(torch.tensor([0.03]))
-            self.fca2.bias.copy_(torch.tensor([0.03]))
-            self.fc2.bias.copy_(torch.tensor([0.03]))
-            self.fc3.bias.copy_(torch.tensor([0.03]))
-
+        pass
         # self.fcs1.weight.data.uniform_(*hidden_init(self.fcs1))
         # self.fc2.weight.data.uniform_(*hidden_init(self.fc2))
         # self.fc3.weight.data.uniform_(-3e-3, 3e-3)
