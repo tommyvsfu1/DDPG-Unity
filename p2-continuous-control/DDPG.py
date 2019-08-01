@@ -92,5 +92,5 @@ class Agent(object):
         self.p_optimizer.step()
 
         #===============================Target Update===============================
-        soft_update(self.Q_target, self.Q_online, tau=1e-2)
-        soft_update(self.P_target, self.P_online, tau=1e-2)
+        soft_update(self.Q_target, self.Q_online, tau=1e-3)
+        soft_update(self.P_target, self.P_online, tau=1e-3)

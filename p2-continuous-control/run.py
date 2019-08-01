@@ -40,7 +40,7 @@ def train(env, agent, brain_name, train_mode=True):
     scores_window = deque(maxlen=consec_episodes)  # mean scores from most recent episodes
     moving_avgs = []                               # list of moving averages    
 
-    for i_episode in range(120):
+    for i_episode in range(1000):
         episode_max_frames = 1000 # debug using 1
         env_info = env.reset(train_mode=train_mode)[brain_name]      
         states = env_info.vector_observations 

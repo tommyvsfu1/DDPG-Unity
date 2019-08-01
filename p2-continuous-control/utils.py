@@ -12,7 +12,7 @@ class ReplayBuffer(object):
         default size : 20000 of (s_t, a_t, r_t, s_t+1)
     Input : (capacity)
     """
-    def __init__(self, capacity=10000):
+    def __init__(self, capacity=20000):
         self.capacity = capacity
         self.memory = []
         self.position = 0
