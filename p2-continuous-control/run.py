@@ -3,6 +3,7 @@ from collections import deque
 import numpy as np
 from DDPG import Agent
 import time
+import argparse
 """
 states = (1, 33) np.array
 actions = (1, 4) np.array
@@ -36,8 +37,8 @@ def train(env, agent, brain_name, train_mode=True):
     scores_window = deque(maxlen=consec_episodes)  # mean scores from most recent episodes
     moving_avgs = []                               # list of moving averages    
 
-    for i_episode in range(1):
-        episode_max_frames = 1 # debug using 1
+    for i_episode in range(120):
+        episode_max_frames = 1000 # debug using 1
         env_info = env.reset(train_mode=train_mode)[brain_name]      
         states = env_info.vector_observations 
         scores = 0      
@@ -79,17 +80,32 @@ def train(env, agent, brain_name, train_mode=True):
         
         if train_mode and mean_scores[-1] > best_score:
             agent.save('./best')
-            print("****save model****")
+            # print("****save model****")
                 
         if moving_avgs[-1] >= solved_score and i_episode >= consec_episodes:
             print('\nEnvironment SOLVED in {} episodes!\tMoving Average ={:.1f} over last {} episodes'.format(\
                                     i_episode-consec_episodes, moving_avgs[-1], consec_episodes))            
             if train_mode:
                 agent.save('./solved')
-                print("****save model****")
+                # print("****save model****")
             break
-def run():
-    env = UnityEnvironment(file_name='./Reacher.app')
+
+def parse():
+    parser = argparse.ArgumentParser(description="p2")
+    parser.add_argument('--machine', default="Mac", help='environment name')
+    try:
+        from argument import add_arguments
+        parser = add_arguments(parser)
+    except:
+        pass
+    args = parser.parse_args()
+    return args
+
+def run(args):
+    if args.machine == "Mac":
+        env = UnityEnvironment(file_name='./Reacher.app')
+    else :
+        env = UnityEnvironment(file_name='./Reacher_Linux_NoVis/Reacher.x86_64')
     # get the default brain
     brain_name = env.brain_names[0]
     brain = env.brains[brain_name]
@@ -98,4 +114,5 @@ def run():
     env.close()
 
 if __name__ == '__main__':
-    run()
+    args = parse()
+    run(args)

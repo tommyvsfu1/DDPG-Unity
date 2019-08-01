@@ -76,7 +76,7 @@ class Agent(object):
         with torch.no_grad():
             target = rewards+ self.gamma * (1-dones) * self.Q_target((next_states, self.P_target(next_states)))  
         Q = self.Q_online((states,actions))
-        td_error = self.loss_td(target, Q)
+        td_error = self.loss_td(Q, target)
         self.q_optimizer.zero_grad()
         td_error.backward()
         self.q_optimizer.step()
