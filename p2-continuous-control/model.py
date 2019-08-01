@@ -55,7 +55,7 @@ class Actor(nn.Module):   # ae(s)=a
     def __init__(self,s_dim,action_size, fc1_units=256, fc2_units=256):
         super(Actor,self).__init__()
         self.fc1 = nn.Linear(s_dim, fc1_units)
-        self.bn1 = nn.BatchNorm1d(fcs1_units)
+        self.bn1 = nn.BatchNorm1d(fc1_units)
         self.fc2 = nn.Linear(fc1_units, fc2_units)
         self.fc3 = nn.Linear(fc2_units, action_size)
         self.reset_parameters()
