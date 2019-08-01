@@ -77,7 +77,6 @@ class Agent(object):
 
         #===============================Critic Update===============================
         with torch.no_grad():
-            self.Q_target.eval()
             target = rewards+ self.gamma * (1-dones) * self.Q_target((next_states, self.P_target(next_states)))  
         Q = self.Q_online((states,actions))
         td_error = self.loss_td(Q, target)
