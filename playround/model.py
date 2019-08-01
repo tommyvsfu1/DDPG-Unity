@@ -109,3 +109,20 @@ class Critic(nn.Module):   # ae(s)=a
         x = F.relu(self.fc2(x))
         x = self.fc3(x)
         return x
+
+
+# ac = Critic(2,2)
+# action = torch.ones((16,2))
+# state = torch.ones((16,2))
+# o = ac((state, action))
+
+# target = torch.ones((16,1))
+# loss_fn = torch.nn.MSELoss()
+# y = loss_fn(o, target)
+# y.backward()
+# for p in ac.named_parameters():
+#     layer_name, parameter = p
+#     print("layer name: ", layer_name)
+#     if layer_name[0:2] != "bn":
+#         norm = torch.norm(parameter.grad)
+#         print("norm", norm)

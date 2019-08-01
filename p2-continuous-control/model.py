@@ -58,7 +58,7 @@ class Actor(nn.Module):   # ae(s)=a
         self.bn1 = nn.BatchNorm1d(fc1_units)
         self.fc2 = nn.Linear(fc1_units, fc2_units)
         self.fc3 = nn.Linear(fc2_units, action_size)
-        self.reset_parameters()
+        # self.reset_parameters()
 
     def reset_parameters(self):
         pass            
@@ -78,12 +78,12 @@ class Critic(nn.Module):   # ae(s)=a
         super(Critic,self).__init__()
         self.fcs1 = nn.Linear(state_size, fcs1_units)
         self.bn1 = nn.BatchNorm1d(fcs1_units)
-        self.fca2 = nn.Linear(action_size, fc2_units)
+        # self.fca2 = nn.Linear(action_size, fc2_units)
         self.bn2 = nn.BatchNorm1d(fc2_units)
         self.fc2 = nn.Linear(fcs1_units+action_size, fc2_units)
 
         self.fc3 = nn.Linear(fc2_units, 1)
-        self.reset_parameters()
+        # self.reset_parameters()
 
     def reset_parameters(self):
         pass
@@ -93,14 +93,14 @@ class Critic(nn.Module):   # ae(s)=a
 
     def forward(self, xs):
         """Build a critic (value) network that maps (state, action) pairs -> Q-values."""
+        state, action = xs
+        s = F.relu(self.bn1(self.fcs1(state)))
+        x = torch.cat((s, action), dim=1)
+        x = F.relu(self.bn2(self.fc2(x)))
+        x = self.fc3(x)
         # state, action = xs
         # s = self.fcs1(state)
-        # x = torch.cat((s, action), dim=1)
-        # x = F.relu(self.fc2(x))
-        # x = self.fc3(x)
-        state, action = xs
-        s = self.fcs1(state)
-        a = self.fca2(action)
-        h2 = F.relu( self.bn2(s+a) )
-        h3 = self.fc3(h2)
-        return h3
+        # a = self.fca2(action)
+        # h2 = F.relu( self.bn2(s+a) )
+        # h3 = self.fc3(h2)
+        return x

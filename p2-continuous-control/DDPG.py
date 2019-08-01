@@ -210,6 +210,11 @@ class Agent(object):
         self.q_optimizer.zero_grad()
         td_error.backward()
         # torch.nn.utils.clip_grad_norm_(self.Q_online.parameters(), 1)
+        for p in self.Q_online.named_parameters():
+            layer_name, parameter = p
+            if layer_name[0:2] != "bn":
+                norm = torch.norm(parameter.grad)
+                self.tensorboard.scalar_summary("Q"+layer_name, norm, self.tensorboard.time_train)
         self.q_optimizer.step()
 
         #===============================Actor Update===============================
@@ -218,10 +223,16 @@ class Agent(object):
         self.p_optimizer.zero_grad()
         loss_a.backward()
         # torch.nn.utils.clip_grad_norm_(self.P_online.parameters(), 1)
+        for p in self.P_online.named_parameters():
+            layer_name, parameter = p
+            if layer_name[0:2] != "bn":
+                norm = torch.norm(parameter.grad)
+                self.tensorboard.scalar_summary("P"+layer_name, norm, self.tensorboard.time_train)
         self.p_optimizer.step()
 
         #===============================Target Update===============================
         soft_update(self.Q_target, self.Q_online, tau=1e-3)
         soft_update(self.P_target, self.P_online, tau=1e-3)
-
         self.epsilon -= EPSILON_DECAY
+        self.tensorboard.train_update()
+        print("finish update -- debug")

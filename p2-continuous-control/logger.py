@@ -9,6 +9,7 @@ class TensorboardLogger(object):
         self.writer = SummaryWriter(log_dir=dir)
         self.time_ep = 0
         self.time_step = 0
+        self.time_train = 0
     def scalar_summary(self, tag, value, t=-1):
         if t == -1:
             self.writer.add_scalar(tag, value, global_step=self.time_s)
@@ -25,5 +26,9 @@ class TensorboardLogger(object):
 
     def episode_update(self):
         self.time_ep += 1
+
     def step_update(self):
         self.time_step += 1
+
+    def train_update(self):
+        self.time_train += 1
