@@ -1,14 +1,94 @@
 import torch
 from model import Actor, Critic
-from utils import ReplayBuffer, soft_update
-from noise import Noise
 import numpy as np
 from logger import TensorboardLogger
+from collections import namedtuple
+import random
+seed = 11037
+random.seed(seed)
+np.random.seed(seed)
+torch.manual_seed(seed)
+torch.cuda.manual_seed_all(seed)
 
 DELTA = 0.5 # The rate of change (time)
 SIGMA = 0.5 # Volatility of the stochastic processes
 OU_A = 3. # The rate of mean reversion
 OU_MU = 0. # The long run average interest rate
+
+Transition = namedtuple('Transition',
+                        ('state', 'action','reward', 'next_state', 'done'))
+
+
+class Noise(object):
+
+    def __init__(self, delta, sigma, ou_a, ou_mu):
+        # Noise parameters
+        self.delta = delta
+        self.sigma = sigma
+        self.ou_a = ou_a
+        self.ou_mu = ou_mu
+
+    def brownian_motion_log_returns(self):
+        """
+        This method returns a Wiener process. The Wiener process is also called Brownian motion. For more information
+        about the Wiener process check out the Wikipedia page: http://en.wikipedia.org/wiki/Wiener_process
+        :return: brownian motion log returns
+        """
+        sqrt_delta_sigma = np.sqrt(self.delta) * self.sigma
+        return np.random.normal(loc=0, scale=sqrt_delta_sigma, size=None)
+
+    def ornstein_uhlenbeck_level(self, prev_ou_level):
+        """
+        This method returns the rate levels of a mean-reverting ornstein uhlenbeck process.
+        :return: the Ornstein Uhlenbeck level
+        """
+        drift = self.ou_a * (self.ou_mu - prev_ou_level) * self.delta
+        randomness = self.brownian_motion_log_returns()
+        return prev_ou_level + drift + randomness
+class ReplayBuffer(object):
+    """
+    Replay Buffer for Q function
+        default size : 20000 of (s_t, a_t, r_t, s_t+1)
+    Input : (capacity)
+    """
+    def __init__(self, capacity=20000):
+        self.capacity = capacity
+        self.memory = []
+        self.position = 0
+        random.seed(11037)
+
+    def push(self, *args):
+        """
+        Push (s_t, a_t, r_t, s_t+1) into buffer
+            Input : s_t, a_t, r_t, s_t+1, done
+            Output : None
+        """
+        if len(self.memory) < self.capacity:
+            self.memory.append(None)
+        self.memory[self.position] = Transition(*args)
+        self.position = (self.position + 1) % self.capacity
+
+    def sample(self, batch_size, device):
+        transitions = random.sample(self.memory, batch_size)
+        batch = Transition(*zip(*transitions))
+        state_batch = torch.cat(batch.state).to(device)
+        action_batch = torch.cat(batch.action).to(device)
+        reward_batch = torch.cat(batch.reward).to(device)
+        next_state_batch = torch.cat(batch.next_state).to(device)
+        dones_batch = torch.cat(batch.done).to(device)
+        return (state_batch, action_batch, reward_batch, next_state_batch, dones_batch)
+
+    def __len__(self):
+        return len(self.memory)
+
+
+def soft_update(target, source, tau):
+    # code from https://github.com/ghliu/pytorch-ddpg/blob/master/util.py
+    for target_param, param in zip(target.parameters(), source.parameters()):
+        target_param.data.copy_(
+            target_param.data * (1.0 - tau) + param.data * tau
+        )
+
 
 class Agent(object):
     def __init__(self, a_dim, s_dim, clip_value, device):
@@ -49,21 +129,26 @@ class Agent(object):
             with torch.no_grad():
                 # boring type casting
                 self.P_online.eval()
-                state = ((torch.from_numpy(state)).unsqueeze(0)).float().to(self.device)
-                action = self.P_online(state) # continuous output
+                state = torch.from_numpy(state).float().to(self.device)
+                actions = self.P_online(state) # continuous output
                 self.P_online.train()
-                a = action.data.cpu().numpy()   
+                a = actions.data.cpu().numpy()   
                 if self.ep_step < 200:
                     self.ou_level = self.noise.ornstein_uhlenbeck_level(self.ou_level)
-                action = np.clip(a + self.ou_level,self.action_low,self.action_high)
-                self.tensorboard.scalar_summary("action_0", action[0][0], self.tensorboard.time_step)
-                self.tensorboard.scalar_summary("action_1", action[0][1], self.tensorboard.time_step)
-                self.tensorboard.scalar_summary("action_2", action[0][2], self.tensorboard.time_step)
-                self.tensorboard.scalar_summary("action_3", action[0][3], self.tensorboard.time_step)
-                self.tensorboard.step_update()
-                return action
+                actions = np.clip(a + self.ou_level,self.action_low,self.action_high)
+                # self.tensorboard.scalar_summary("action_0", action[0][0], self.tensorboard.time_step)
+                # self.tensorboard.scalar_summary("action_1", action[0][1], self.tensorboard.time_step)
+                # self.tensorboard.scalar_summary("action_2", action[0][2], self.tensorboard.time_step)
+                # self.tensorboard.scalar_summary("action_3", action[0][3], self.tensorboard.time_step)
+                # self.tensorboard.step_update()
+                return actions
 
     def collect_data(self, state, action, reward, next_state, done):
+        # print("state", state.shape)
+        # print("action", action.shape)
+        # print("reward", reward)
+        # print("next state", next_state.shape)
+        # print("done", done)
         self.replay_buffer.push(torch.from_numpy(state).float().unsqueeze(0), 
                                 torch.from_numpy(action).float().unsqueeze(0), 
                                 torch.tensor([reward]).float().unsqueeze(0), 
@@ -82,10 +167,14 @@ class Agent(object):
     def update(self):
         if len(self.replay_buffer) < self.batch_size:
             return
-        if len(self.replay_buffer) <= (self.replay_buffer.capacity * 0.8):
-            return
+        # if len(self.replay_buffer) <= (self.replay_buffer.capacity * 0.8):
+        #     return
         states, actions, rewards, next_states, dones = self.replay_buffer.sample(batch_size=self.batch_size, device=self.device)
-
+        # print("state", states.shape)
+        # print("action", actions.shape)
+        # print("reward", rewards.shape)
+        # print("next state", next_states.shape)
+        # print("done", dones.shape)
         #===============================Critic Update===============================
         with torch.no_grad():
             self.P_target.eval()

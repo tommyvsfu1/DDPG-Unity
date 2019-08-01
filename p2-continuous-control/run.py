@@ -6,11 +6,20 @@ from DDPG import Agent
 import time
 import argparse
 """
+Single Agent
 states = (1, 33) np.array
 actions = (1, 4) np.array
 rewards = [] list with length 1
 dones = [] list with length 1
 """
+"""
+Multi Agents
+states = (20, 33) np.array
+actions = (20, 4) np.array
+rewards = [] list with length 20
+dones = [] list with length 20
+"""
+
 def act():
     action_size = 4
     actions = np.random.randn(1, action_size) # select an action (for each agent)
@@ -40,35 +49,35 @@ def train(env, agent, brain_name, train_mode=True):
     scores_window = deque(maxlen=consec_episodes)  # mean scores from most recent episodes
     moving_avgs = []                               # list of moving averages    
 
-    for i_episode in range(1000):
+    for i_episode in range(5):
         episode_max_frames = 1000 # debug using 1
         env_info = env.reset(train_mode=train_mode)[brain_name]      
         states = env_info.vector_observations 
-        scores = 0      
+        scores = np.zeros(num_agents) 
         start_time = time.time()   
         agent.ep_step += 1        
         for t in range(episode_max_frames):
             # use policy make action
-            actions = agent.act(states.reshape(-1)) 
+            actions = agent.act(states) 
             # actions = act()
             # agent <-> environment
             next_states, rewards, dones = env_step(env, actions, brain_name)
-            # collect data
-            agent.collect_data(states.reshape(-1), 
-                               actions.reshape(-1), 
-                               rewards[0], 
-                               next_states.reshape(-1), 
-                               dones[0])
-            
+            # save experience to replay buffer, perform learning step at defined interval
+            for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
+                # collect data
+                agent.collect_data(state.reshape(-1), 
+                                action.reshape(-1), 
+                                reward, 
+                                next_state.reshape(-1), 
+                                done)
+                if (t+1) % LEARN_EVERY == 0:
+                    for _ in range(LEARN_NUM):
+                        agent.update()
             # move to next states
             states = next_states           
-            scores += rewards[0]                    
+            scores += rewards  
             if np.any(dones):                                  
                 break
-
-            if (t+1) % LEARN_EVERY == 0:
-                for _ in range(LEARN_NUM):
-                    agent.update()  
 
         #############################Boring Log#############################
         ####################################################################  
