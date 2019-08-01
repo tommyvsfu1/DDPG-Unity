@@ -125,6 +125,7 @@ def run(args):
         device = torch.device('cuda')
     else :
         device = torch.device('cpu')
+    print("using device", device)
     # get the default brain
     brain_name = env.brain_names[0]
     brain = env.brains[brain_name]
