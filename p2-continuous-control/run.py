@@ -146,18 +146,18 @@ def train(env, agent, brain_name, train_mode=True):
             rewards = env_info.rewards                          # get reward
             dones = env_info.local_done                         # see if episode has finished
             # save experience to replay buffer, perform learning step at defined interval
-            # for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
-            #     # collect data
-            #     #=======================================
-            #     # agent.step(state, action, reward, next_state, done, t)
-            #     #========== my version==================
-            #     agent.collect_data(state.reshape(-1), 
-            #                     action.reshape(-1), 
-            #                     reward, 
-            #                     next_state.reshape(-1), 
-            #                     done)
-            #     if t % LEARN_EVERY == 0:
-            #        agent.update()
+            for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
+                # collect data
+                #=======================================
+                # agent.step(state, action, reward, next_state, done, t)
+                #========== my version==================
+                agent.collect_data(state.reshape(-1), 
+                                action.reshape(-1), 
+                                reward, 
+                                next_state.reshape(-1), 
+                                done)
+                if t % LEARN_EVERY == 0:
+                   agent.update()
                 # =======================================
             # move to next states
             states = next_states           
