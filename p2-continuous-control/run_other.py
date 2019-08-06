@@ -2,8 +2,8 @@ from unityagents import UnityEnvironment
 from collections import deque
 import numpy as np
 import torch
-from DDPG import Agent
-# from DDPG_other import Agent
+# from DDPG import Agent
+from DDPG_other import Agent
 import time
 import argparse
 """
@@ -56,15 +56,15 @@ def train(env, agent, brain_name, train_mode=True):
         states = env_info.vector_observations 
         scores = np.zeros(20) 
         start_time = time.time()   
-        agent.ep_step += 1       
+        # agent.ep_step += 1       
         
         agent.reset() 
         for t in range(episode_max_frames):
             # use policy make action
             #============== my version=================
-            actions = agent.act(states) 
+            # actions = agent.act(states) 
             #==========================================
-            # actions = agent.act(states, add_noise=True)
+            actions = agent.act(states, add_noise=True)
             #========================================== 
             # actions = act()
             # agent <-> environment
@@ -73,16 +73,17 @@ def train(env, agent, brain_name, train_mode=True):
             for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
                 # collect data
                 #=======================================
-                # agent.step(state, action, reward, next_state, done, t)
+                agent.step(state, action, reward, next_state, done, t)
                 #========== my version==================
-                agent.collect_data(state.reshape(-1), 
-                                action.reshape(-1), 
-                                reward, 
-                                next_state.reshape(-1), 
-                                done)
-                if (t+1) % LEARN_EVERY == 0:
-                   agent.update()
-                # =======================================
+                # agent.collect_data(state.reshape(-1), 
+                #                 action.reshape(-1), 
+                #                 reward, 
+                #                 next_state.reshape(-1), 
+                #                 done)
+                # if (t+1) % LEARN_EVERY == 0:
+                #     for _ in range(LEARN_NUM):
+                #         agent.update()
+                #=======================================
             # move to next states
             states = next_states           
             scores += rewards  
@@ -228,12 +229,12 @@ def run(args):
     print('There are {} agents. Each observes a state with length: {}'.format(states.shape[0], state_size))
     print('The state for the first agent looks like:', states[0])
     #==========================my version=========================
-    agent = Agent(a_dim=4, s_dim=33, clip_value=1, device=device) # continuous action clip
+    # agent = Agent(a_dim=4, s_dim=33, clip_value=1, device=device) # continuous action clip
     #=============================================================
-    # agent = Agent(state_size=33, action_size=4,random_seed=11037)
+    agent = Agent(state_size=33, action_size=4,random_seed=11037)
     #=============================================================
-    # ddpg(brain_name, num_agents, env, agent)
-    train(env, agent, brain_name)
+    ddpg(brain_name, num_agents, env, agent)
+    # train(env, agent, brain_name)
     env.close()
 
 if __name__ == '__main__':

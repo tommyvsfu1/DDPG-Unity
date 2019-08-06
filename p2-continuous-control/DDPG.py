@@ -179,6 +179,10 @@ class Agent(object):
                                 torch.tensor([reward]).float().unsqueeze(0), 
                                 torch.from_numpy(next_state).float().unsqueeze(0),
                                 torch.tensor([done]).float().unsqueeze(0))
+    
+    def reset(self):
+        self.noise.reset()
+
     def clear_data(self):
         raise NotImplementedError("Circular Queue don't need this function")
 
