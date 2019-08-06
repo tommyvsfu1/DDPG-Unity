@@ -63,12 +63,14 @@ def train(env, agent, brain_name, train_mode=True):
             # use policy make action
             #============== my version=================
             actions = agent.act(states) 
+            print("action time", time.time() - start_time)
             #==========================================
             # actions = agent.act(states, add_noise=True)
             #========================================== 
             # actions = act()
             # agent <-> environment
             next_states, rewards, dones = env_step(env, actions, brain_name)
+            print("step time", time.time() - start_time)
             # save experience to replay buffer, perform learning step at defined interval
             for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
                 # collect data
@@ -83,6 +85,7 @@ def train(env, agent, brain_name, train_mode=True):
                 if (t+1) % LEARN_EVERY == 0:
                    agent.update()
                 # =======================================
+            print("update time", time.time() - start_time)
             # move to next states
             states = next_states           
             scores += rewards  
