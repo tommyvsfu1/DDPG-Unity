@@ -95,17 +95,26 @@ class ReplayBuffer(object):
         #     self.memory.append(None)
         # self.memory[self.position] = Transition(*args)
         # self.position = (self.position + 1) % self.capacity
+
         e = Transition(*args)
         self.memory.append(e)
 
     def sample(self, batch_size, device):
-        transitions = random.sample(self.memory, batch_size)
-        batch = Transition(*zip(*transitions))
-        state_batch = torch.cat(batch.state).to(device)
-        action_batch = torch.cat(batch.action).to(device)
-        reward_batch = torch.cat(batch.reward).to(device)
-        next_state_batch = torch.cat(batch.next_state).to(device)
-        dones_batch = torch.cat(batch.done).to(device)
+        experiences = random.sample(self.memory, k=batch_size)
+
+        state_batch = torch.from_numpy(np.vstack([e.state for e in experiences if e is not None])).float().to(device)
+        action_batch = torch.from_numpy(np.vstack([e.action for e in experiences if e is not None])).float().to(device)
+        reward_batch = torch.from_numpy(np.vstack([e.reward for e in experiences if e is not None])).float().to(device)
+        next_state_batch = torch.from_numpy(np.vstack([e.next_state for e in experiences if e is not None])).float().to(device)
+        dones_batch = torch.from_numpy(np.vstack([e.done for e in experiences if e is not None]).astype(np.uint8)).float().to(device)
+        
+        # transitions = random.sample(self.memory, batch_size)
+        # batch = Transition(*zip(*transitions))
+        # state_batch = torch.cat(batch.state).to(device)
+        # action_batch = torch.cat(batch.action).to(device)
+        # reward_batch = torch.cat(batch.reward).to(device)
+        # next_state_batch = torch.cat(batch.next_state).to(device)
+        # dones_batch = torch.cat(batch.done).to(device)
         return (state_batch, action_batch, reward_batch, next_state_batch, dones_batch)
 
     def __len__(self):
@@ -173,12 +182,12 @@ class Agent(object):
         # print("reward", reward)
         # print("next state", next_state.shape)
         # print("done", done)
-        self.replay_buffer.push(torch.from_numpy(state).float().unsqueeze(0), 
-                                torch.from_numpy(action).float().unsqueeze(0), 
-                                torch.tensor([reward]).float().unsqueeze(0), 
-                                torch.from_numpy(next_state).float().unsqueeze(0),
-                                torch.tensor([done]).float().unsqueeze(0))
-    
+        # self.replay_buffer.push(torch.from_numpy(state).float().unsqueeze(0), 
+        #                         torch.from_numpy(action).float().unsqueeze(0), 
+        #                         torch.tensor([reward]).float().unsqueeze(0), 
+        #                         torch.from_numpy(next_state).float().unsqueeze(0),
+        #                         torch.tensor([done]).float().unsqueeze(0))
+        self.replay_buffer.push(state, action, reward, next_state, done)
     def reset(self):
         self.noise.reset()
 
