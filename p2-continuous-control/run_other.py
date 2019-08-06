@@ -149,11 +149,14 @@ def ddpg(brain_name, num_agents, env, agent, n_episodes=500, max_t=1000, solved_
         agent.reset()
         start_time = time.time()
         for t in range(max_t):
+            cil = time.time()
             actions = agent.act(states, add_noise=True)         # select an action
-            print("action time", time.time() - start_time)
+            ac_t = time.time()
+            print("action time", ac_t - cil)
 
             env_info = env.step(actions)[brain_name]            # send actions to environment
-            print("step time", time.time() - start_time)
+            st_t = time.time()
+            print("step time", st_t - ac_t)
 
             next_states = env_info.vector_observations          # get next state
             rewards = env_info.rewards                          # get reward
@@ -161,7 +164,8 @@ def ddpg(brain_name, num_agents, env, agent, n_episodes=500, max_t=1000, solved_
             # save experience to replay buffer, perform learning step at defined interval
             for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
                 agent.step(state, action, reward, next_state, done, t)             
-            print("update time", time.time() - start_time)
+            ut_t = time.time()
+            print("update time", ut_t - st_t)
             states = next_states
             scores += rewards        
             if np.any(dones):                                   # exit loop when episode ends
