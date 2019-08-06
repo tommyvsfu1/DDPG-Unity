@@ -68,7 +68,11 @@ def train(env, agent, brain_name, train_mode=True):
             #========================================== 
             # actions = act()
             # agent <-> environment
-            next_states, rewards, dones = env_step(env, actions, brain_name)
+            # next_states, rewards, dones = env_step(env, actions, brain_name)
+            env_info = env.step(actions)[brain_name]            # send actions to environment
+            next_states = env_info.vector_observations          # get next state
+            rewards = env_info.rewards                          # get reward
+            dones = env_info.local_done                         # see if episode has finished
             # save experience to replay buffer, perform learning step at defined interval
             for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
                 # collect data
