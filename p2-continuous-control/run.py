@@ -110,41 +110,36 @@ def ddpg(brain_name, num_agents, env, agent, n_episodes=500, max_t=1000, solved_
     return mean_scores, moving_avgs
 
 def train(env, agent, brain_name, train_mode=True):
-    # LEARN_EVERY = 10000        # learning timestep interval
-    # LEARN_NUM = 10          # number of learning passes
-    # solved_score=30.0
-    # consec_episodes=100
-    # print_every=1
-    # mean_scores = []                               # list of mean scores from each episode
-    # min_scores = []                                # list of lowest scores from each episode
-    # max_scores = []                                # list of highest scores from each episode
-    # best_score = -np.inf
-    # scores_window = deque(maxlen=consec_episodes)  # mean scores from most recent episodes
-    # moving_avgs = []                               # list of moving averages    
+    LEARN_EVERY = 20        # learning timestep interval
+    LEARN_NUM = 10          # number of learning passes
+    solved_score=30.0
+    consec_episodes=100
+    print_every=1
+    mean_scores = []                               # list of mean scores from each episode
+    min_scores = []                                # list of lowest scores from each episode
+    max_scores = []                                # list of highest scores from each episode
+    best_score = -np.inf
+    scores_window = deque(maxlen=consec_episodes)  # mean scores from most recent episodes
+    moving_avgs = []                               # list of moving averages    
 
     for i_episode in range(200):
-        # episode_max_frames = 1000 # debug using 1
+        episode_max_frames = 1000 # debug using 1
         env_info = env.reset(train_mode=train_mode)[brain_name]      
         states = env_info.vector_observations 
-        # scores = np.zeros(20) 
-        # start_time = time.time()   
+        scores = np.zeros(20) 
+        start_time = time.time()   
         # agent.ep_step += 1       
-        # agent.reset() 
+        agent.reset() 
         for t in range(1,1000):
             # use policy make action
             #============== my version=================
-            # actions = agent.act(states) 
-            actions = act()
+            actions = agent.act(states) 
+            # actions = act()
             #==========================================
             # actions = agent.act(states, add_noise=True)
             #========================================== 
-            # actions = act()
             # agent <-> environment
-            # next_states, rewards, dones = env_step(env, actions, brain_name)
-            env_info = env.step(actions)[brain_name]            # send actions to environment
-            next_states = env_info.vector_observations          # get next state
-            rewards = env_info.rewards                          # get reward
-            dones = env_info.local_done                         # see if episode has finished
+            next_states, rewards, dones = env_step(env, actions, brain_name)
             # save experience to replay buffer, perform learning step at defined interval
             for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
                 # collect data
@@ -156,7 +151,7 @@ def train(env, agent, brain_name, train_mode=True):
                                 reward, 
                                 next_state.reshape(-1), 
                                 done)
-                if t % 10000 == 0:
+                if t % LEARN_EVERY == 0:
                    agent.update()
                 # =======================================
             # move to next states
@@ -166,31 +161,30 @@ def train(env, agent, brain_name, train_mode=True):
                 break
         #############################Boring Log#############################
         ####################################################################  
-        print("episode", i_episode)
-        # duration = time.time() - start_time
-        # min_scores.append(np.min(scores))             # save lowest score for a single agent
-        # max_scores.append(np.max(scores))             # save highest score for a single agent        
-        # mean_scores.append(np.mean(scores))           # save mean score for the episode
-        # scores_window.append(mean_scores[-1])         # save mean score to window
-        # moving_avgs.append(np.mean(scores_window))    # save moving average
+        duration = time.time() - start_time
+        min_scores.append(np.min(scores))             # save lowest score for a single agent
+        max_scores.append(np.max(scores))             # save highest score for a single agent        
+        mean_scores.append(np.mean(scores))           # save mean score for the episode
+        scores_window.append(mean_scores[-1])         # save mean score to window
+        moving_avgs.append(np.mean(scores_window))    # save moving average
                 
-        # if i_episode % print_every == 0:
-        #     print('\rEpisode {} ({} sec)  -- \tMin: {:.1f}\tMax: {:.1f}\tMean: {:.1f}\tMov. Avg: {:.1f}'.format(\
-        #         i_episode, round(duration), min_scores[-1], max_scores[-1], mean_scores[-1], moving_avgs[-1]))
+        if i_episode % print_every == 0:
+            print('\rEpisode {} ({} sec)  -- \tMin: {:.1f}\tMax: {:.1f}\tMean: {:.1f}\tMov. Avg: {:.1f}'.format(\
+                i_episode, round(duration), min_scores[-1], max_scores[-1], mean_scores[-1], moving_avgs[-1]))
         
-        # if train_mode and mean_scores[-1] > best_score:
-        #     pass
-        #     # agent.save('./best')
-        #     # print("****save model****")
+        if train_mode and mean_scores[-1] > best_score:
+            pass
+            # agent.save('./best')
+            # print("****save model****")
                 
-        # if moving_avgs[-1] >= solved_score and i_episode >= consec_episodes:
-        #     print('\nEnvironment SOLVED in {} episodes!\tMoving Average ={:.1f} over last {} episodes'.format(\
-        #                             i_episode-consec_episodes, moving_avgs[-1], consec_episodes))            
-        #     if train_mode:
-        #         pass
-        #         # agent.save('./solved')
-        #         # print("****save model****")
-        #     break
+        if moving_avgs[-1] >= solved_score and i_episode >= consec_episodes:
+            print('\nEnvironment SOLVED in {} episodes!\tMoving Average ={:.1f} over last {} episodes'.format(\
+                                    i_episode-consec_episodes, moving_avgs[-1], consec_episodes))            
+            if train_mode:
+                pass
+                # agent.save('./solved')
+                # print("****save model****")
+            break
 def parse():
     parser = argparse.ArgumentParser(description="p2")
     parser.add_argument('--machine', default="Mac", help='environment name')
