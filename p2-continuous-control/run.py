@@ -125,7 +125,7 @@ def train(env, agent, brain_name, train_mode=True):
     for i_episode in range(200):
         # episode_max_frames = 1000 # debug using 1
         env_info = env.reset(train_mode=train_mode)[brain_name]      
-        # states = env_info.vector_observations 
+        states = env_info.vector_observations 
         # scores = np.zeros(20) 
         # start_time = time.time()   
         # agent.ep_step += 1       
