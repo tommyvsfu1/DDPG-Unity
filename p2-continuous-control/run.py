@@ -60,17 +60,20 @@ def train(env, agent, brain_name, train_mode=True):
         
         agent.reset() 
         for t in range(episode_max_frames):
+            cil = time.time()
             # use policy make action
             #============== my version=================
             actions = agent.act(states) 
-            print("action time", time.time() - start_time)
+            ac_time = time.time()
+            print("action time", ac_time - cil)
             #==========================================
             # actions = agent.act(states, add_noise=True)
             #========================================== 
             # actions = act()
             # agent <-> environment
             next_states, rewards, dones = env_step(env, actions, brain_name)
-            print("step time", time.time() - start_time)
+            step_time = time.time() 
+            print("step time", step_time - ac_time)
             # save experience to replay buffer, perform learning step at defined interval
             for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
                 # collect data
@@ -85,7 +88,7 @@ def train(env, agent, brain_name, train_mode=True):
                 if (t+1) % LEARN_EVERY == 0:
                    agent.update()
                 # =======================================
-            print("update time", time.time() - start_time)
+            print("update time", time.time() - step_time)
             # move to next states
             states = next_states           
             scores += rewards  
