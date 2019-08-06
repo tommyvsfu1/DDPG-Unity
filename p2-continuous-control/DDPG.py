@@ -207,11 +207,11 @@ class Agent(object):
         # if len(self.replay_buffer) <= (10000):
         #     return
         states, actions, rewards, next_states, dones = self.replay_buffer.sample(batch_size=self.batch_size, device=self.device)
-        print("state", states.shape)
-        print("action", actions.shape)
-        print("reward", rewards.shape)
-        print("next state", next_states.shape)
-        print("done", dones.shape)
+        # print("state", states.shape)
+        # print("action", actions.shape)
+        # print("reward", rewards.shape)
+        # print("next state", next_states.shape)
+        # print("done", dones.shape)
         #===============================Critic Update===============================
         with torch.no_grad():
             self.P_target.eval()
