@@ -24,6 +24,7 @@ EPSILON = 1.0           # explore->exploit noise process added to act step
 EPSILON_DECAY = 1e-6    # decay rate for noise process
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+print("using device")
 
 class Agent():
     """Interacts with and learns from the environment."""
