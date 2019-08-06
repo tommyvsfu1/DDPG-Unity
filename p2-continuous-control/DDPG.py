@@ -84,7 +84,7 @@ class ReplayBuffer(object):
         self.capacity = capacity
         self.memory = []
         self.position = 0
-
+        self.seed = random.seed(11037)
     def push(self, *args):
         """
         Push (s_t, a_t, r_t, s_t+1) into buffer
