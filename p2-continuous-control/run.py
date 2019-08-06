@@ -130,7 +130,7 @@ def train(env, agent, brain_name, train_mode=True):
         # start_time = time.time()   
         # agent.ep_step += 1       
         # agent.reset() 
-        for t in range(1,episode_max_frames):
+        for t in range(1,1000):
             # use policy make action
             #============== my version=================
             # actions = agent.act(states) 
