@@ -38,7 +38,7 @@ def env_step(env, actions, brain_name):
     return next_states, rewards, dones
 
 def train(env, agent, brain_name, train_mode=True):
-    LEARN_EVERY = 30        # learning timestep interval
+    LEARN_EVERY = 500        # learning timestep interval
     LEARN_NUM = 10          # number of learning passes
     solved_score=30.0
     consec_episodes=100
