@@ -161,6 +161,7 @@ def ddpg(brain_name, num_agents, env, agent, n_episodes=500, max_t=1000, solved_
             scores += rewards        
             if np.any(dones):                                   # exit loop when episode ends
                 break
+            print("epoch",i_episode,"t",t)
 
         duration = time.time() - start_time
         min_scores.append(np.min(scores))             # save lowest score for a single agent
