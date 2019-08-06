@@ -42,7 +42,7 @@ class Agent():
         self.action_size = action_size
         self.seed = random.seed(random_seed)
         self.epsilon = EPSILON
-
+        print("Agent device", device)
         # Actor Network (w/ Target Network)
         self.actor_local = Actor(state_size, action_size, random_seed).to(device)
         self.actor_target = Actor(state_size, action_size, random_seed).to(device)
@@ -190,6 +190,7 @@ class ReplayBuffer:
         self.memory.append(e)
 
     def sample(self):
+        print("sample device", device)
         """Randomly sample a batch of experiences from memory."""
         experiences = random.sample(self.memory, k=self.batch_size)
 
