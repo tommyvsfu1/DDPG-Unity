@@ -119,7 +119,7 @@ def train(env, agent, brain_name, train_mode=True):
 
 
 
-def ddpg(env, agent, n_episodes=500, max_t=1000, solved_score=30.0, consec_episodes=100, print_every=1, train_mode=True,
+def ddpg(brain_name, num_agents, env, agent, n_episodes=500, max_t=1000, solved_score=30.0, consec_episodes=100, print_every=1, train_mode=True,
          actor_path='actor_ckpt.pth', critic_path='critic_ckpt.pth'):
     """Deep Deterministic Policy Gradient (DDPG)
     
@@ -233,7 +233,7 @@ def run(args):
     #=============================================================
     agent = Agent(state_size=33, action_size=4,random_seed=11037)
     #=============================================================
-    ddpg(env, agent)
+    ddpg(brain_name, num_agents, env, agent)
     # train(env, agent, brain_name)
     env.close()
 
