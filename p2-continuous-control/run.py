@@ -156,7 +156,7 @@ def train(env, agent, brain_name, train_mode=True):
                                 reward, 
                                 next_state.reshape(-1), 
                                 done)
-                if t % LEARN_EVERY == 0:
+                if t % 10000 == 0:
                    agent.update()
                 # =======================================
             # move to next states
