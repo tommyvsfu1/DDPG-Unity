@@ -110,30 +110,31 @@ def ddpg(brain_name, num_agents, env, agent, n_episodes=500, max_t=1000, solved_
     return mean_scores, moving_avgs
 
 def train(env, agent, brain_name, train_mode=True):
-    LEARN_EVERY = 10000        # learning timestep interval
-    LEARN_NUM = 10          # number of learning passes
-    solved_score=30.0
-    consec_episodes=100
-    print_every=1
-    mean_scores = []                               # list of mean scores from each episode
-    min_scores = []                                # list of lowest scores from each episode
-    max_scores = []                                # list of highest scores from each episode
-    best_score = -np.inf
-    scores_window = deque(maxlen=consec_episodes)  # mean scores from most recent episodes
-    moving_avgs = []                               # list of moving averages    
+    # LEARN_EVERY = 10000        # learning timestep interval
+    # LEARN_NUM = 10          # number of learning passes
+    # solved_score=30.0
+    # consec_episodes=100
+    # print_every=1
+    # mean_scores = []                               # list of mean scores from each episode
+    # min_scores = []                                # list of lowest scores from each episode
+    # max_scores = []                                # list of highest scores from each episode
+    # best_score = -np.inf
+    # scores_window = deque(maxlen=consec_episodes)  # mean scores from most recent episodes
+    # moving_avgs = []                               # list of moving averages    
 
     for i_episode in range(200):
-        episode_max_frames = 1000 # debug using 1
+        # episode_max_frames = 1000 # debug using 1
         env_info = env.reset(train_mode=train_mode)[brain_name]      
-        states = env_info.vector_observations 
-        scores = np.zeros(20) 
-        start_time = time.time()   
-        agent.ep_step += 1       
-        agent.reset() 
+        # states = env_info.vector_observations 
+        # scores = np.zeros(20) 
+        # start_time = time.time()   
+        # agent.ep_step += 1       
+        # agent.reset() 
         for t in range(1,episode_max_frames):
             # use policy make action
             #============== my version=================
-            actions = agent.act(states) 
+            # actions = agent.act(states) 
+            actions = act()
             #==========================================
             # actions = agent.act(states, add_noise=True)
             #========================================== 
@@ -145,18 +146,18 @@ def train(env, agent, brain_name, train_mode=True):
             rewards = env_info.rewards                          # get reward
             dones = env_info.local_done                         # see if episode has finished
             # save experience to replay buffer, perform learning step at defined interval
-            for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
-                # collect data
-                #=======================================
-                # agent.step(state, action, reward, next_state, done, t)
-                #========== my version==================
-                agent.collect_data(state.reshape(-1), 
-                                action.reshape(-1), 
-                                reward, 
-                                next_state.reshape(-1), 
-                                done)
-                if t % LEARN_EVERY == 0:
-                   agent.update()
+            # for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
+            #     # collect data
+            #     #=======================================
+            #     # agent.step(state, action, reward, next_state, done, t)
+            #     #========== my version==================
+            #     agent.collect_data(state.reshape(-1), 
+            #                     action.reshape(-1), 
+            #                     reward, 
+            #                     next_state.reshape(-1), 
+            #                     done)
+            #     if t % LEARN_EVERY == 0:
+            #        agent.update()
                 # =======================================
             # move to next states
             states = next_states           
