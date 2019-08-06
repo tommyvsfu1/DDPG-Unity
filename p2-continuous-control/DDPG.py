@@ -198,6 +198,7 @@ class Agent(object):
             return
         if len(self.replay_buffer) <= (10000):
             return
+        print("update")
         states, actions, rewards, next_states, dones = self.replay_buffer.sample(batch_size=self.batch_size, device=self.device)
         # print("state", states.shape)
         # print("action", actions.shape)
