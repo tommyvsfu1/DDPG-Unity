@@ -38,7 +38,7 @@ def env_step(env, actions, brain_name):
     return next_states, rewards, dones
 
 def train(env, agent, brain_name, train_mode=True):
-    LEARN_EVERY = 500        # learning timestep interval
+    LEARN_EVERY = 10000        # learning timestep interval
     LEARN_NUM = 10          # number of learning passes
     solved_score=30.0
     consec_episodes=100
@@ -94,30 +94,31 @@ def train(env, agent, brain_name, train_mode=True):
                 break
         #############################Boring Log#############################
         ####################################################################  
-        duration = time.time() - start_time
-        min_scores.append(np.min(scores))             # save lowest score for a single agent
-        max_scores.append(np.max(scores))             # save highest score for a single agent        
-        mean_scores.append(np.mean(scores))           # save mean score for the episode
-        scores_window.append(mean_scores[-1])         # save mean score to window
-        moving_avgs.append(np.mean(scores_window))    # save moving average
+        print("episode", i_episode)
+        # duration = time.time() - start_time
+        # min_scores.append(np.min(scores))             # save lowest score for a single agent
+        # max_scores.append(np.max(scores))             # save highest score for a single agent        
+        # mean_scores.append(np.mean(scores))           # save mean score for the episode
+        # scores_window.append(mean_scores[-1])         # save mean score to window
+        # moving_avgs.append(np.mean(scores_window))    # save moving average
                 
-        if i_episode % print_every == 0:
-            print('\rEpisode {} ({} sec)  -- \tMin: {:.1f}\tMax: {:.1f}\tMean: {:.1f}\tMov. Avg: {:.1f}'.format(\
-                i_episode, round(duration), min_scores[-1], max_scores[-1], mean_scores[-1], moving_avgs[-1]))
+        # if i_episode % print_every == 0:
+        #     print('\rEpisode {} ({} sec)  -- \tMin: {:.1f}\tMax: {:.1f}\tMean: {:.1f}\tMov. Avg: {:.1f}'.format(\
+        #         i_episode, round(duration), min_scores[-1], max_scores[-1], mean_scores[-1], moving_avgs[-1]))
         
-        if train_mode and mean_scores[-1] > best_score:
-            pass
-            # agent.save('./best')
-            # print("****save model****")
+        # if train_mode and mean_scores[-1] > best_score:
+        #     pass
+        #     # agent.save('./best')
+        #     # print("****save model****")
                 
-        if moving_avgs[-1] >= solved_score and i_episode >= consec_episodes:
-            print('\nEnvironment SOLVED in {} episodes!\tMoving Average ={:.1f} over last {} episodes'.format(\
-                                    i_episode-consec_episodes, moving_avgs[-1], consec_episodes))            
-            if train_mode:
-                pass
-                # agent.save('./solved')
-                # print("****save model****")
-            break
+        # if moving_avgs[-1] >= solved_score and i_episode >= consec_episodes:
+        #     print('\nEnvironment SOLVED in {} episodes!\tMoving Average ={:.1f} over last {} episodes'.format(\
+        #                             i_episode-consec_episodes, moving_avgs[-1], consec_episodes))            
+        #     if train_mode:
+        #         pass
+        #         # agent.save('./solved')
+        #         # print("****save model****")
+        #     break
 
 
 
