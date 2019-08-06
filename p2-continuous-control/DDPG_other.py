@@ -96,8 +96,11 @@ class Agent():
         states, actions, rewards, next_states, dones = experiences
         # ---------------------------- update critic ---------------------------- #
         # Get predicted next-state actions and Q values from target models
-        actions_next = self.actor_target(next_states)
-        Q_targets_next = self.critic_target( (next_states, actions_next) )
+        with torch.no_grad():
+            self.actor_target.eval()
+            self.critic_target.eval()
+            actions_next = self.actor_target(next_states)
+            Q_targets_next = self.critic_target( (next_states, actions_next) )
         # Compute Q targets for current states (y_i)
         Q_targets = rewards + (gamma * Q_targets_next * (1 - dones))
         # Compute critic loss
