@@ -151,11 +151,11 @@ def train(env, agent, brain_name, train_mode=True):
                 #=======================================
                 # agent.step(state, action, reward, next_state, done, t)
                 #========== my version==================
-                agent.collect_data(state.reshape(-1), 
-                                action.reshape(-1), 
-                                reward, 
-                                next_state.reshape(-1), 
-                                done)
+                # agent.collect_data(state.reshape(-1), 
+                #                 action.reshape(-1), 
+                #                 reward, 
+                #                 next_state.reshape(-1), 
+                #                 done)
                 if t % 10000 == 0:
                    agent.update()
                 # =======================================
