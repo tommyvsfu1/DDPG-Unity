@@ -156,7 +156,7 @@ def train(env, agent, brain_name, train_mode=True):
                 # =======================================
             # move to next states
             states = next_states           
-            # scores += rewards  
+            scores += rewards  
             if np.any(dones):                                  
                 break
         #############################Boring Log#############################
