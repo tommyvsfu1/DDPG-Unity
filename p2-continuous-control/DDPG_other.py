@@ -97,8 +97,8 @@ class Agent():
         # ---------------------------- update critic ---------------------------- #
         # Get predicted next-state actions and Q values from target models
         with torch.no_grad():
-            self.actor_target.eval()
-            self.critic_target.eval()
+            # self.actor_target.eval()
+            # self.critic_target.eval()
             actions_next = self.actor_target(next_states)
             Q_targets_next = self.critic_target( (next_states, actions_next) )
         # Compute Q targets for current states (y_i)
