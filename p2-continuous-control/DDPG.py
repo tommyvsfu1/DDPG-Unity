@@ -2,7 +2,7 @@ import torch
 from model import Actor, Critic
 import numpy as np
 from logger import TensorboardLogger
-from collections import namedtuple
+from collections import namedtuple, deque
 import random
 import copy
 seed = 11037
@@ -80,9 +80,9 @@ class ReplayBuffer(object):
         default size : 20000 of (s_t, a_t, r_t, s_t+1)
     Input : (capacity)
     """
-    def __init__(self, capacity=int(100000)):
+    def __init__(self, capacity=int(1e6)):
         self.capacity = capacity
-        self.memory = []
+        self.memory = deque(maxlen=capacity)
         self.position = 0
         self.seed = random.seed(11037)
     def push(self, *args):
@@ -91,10 +91,12 @@ class ReplayBuffer(object):
             Input : s_t, a_t, r_t, s_t+1, done
             Output : None
         """
-        if len(self.memory) < self.capacity:
-            self.memory.append(None)
-        self.memory[self.position] = Transition(*args)
-        self.position = (self.position + 1) % self.capacity
+        # if len(self.memory) < self.capacity:
+        #     self.memory.append(None)
+        # self.memory[self.position] = Transition(*args)
+        # self.position = (self.position + 1) % self.capacity
+        e = Transition(*args)
+        self.memory.append(e)
 
     def sample(self, batch_size, device):
         transitions = random.sample(self.memory, batch_size)
