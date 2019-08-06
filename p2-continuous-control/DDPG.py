@@ -162,15 +162,10 @@ class Agent(object):
                 self.P_online.eval()
                 state = torch.from_numpy(state).float().to(self.device)
                 actions = self.P_online(state) # continuous output
-                self.P_online.train()
-                a = actions.data.cpu().numpy()   
-                actions = np.clip(a + self.epsilon * self.noise.sample(),self.action_low,self.action_high)
-                # self.tensorboard.scalar_summary("action_0", action[0][0], self.tensorboard.time_step)
-                # self.tensorboard.scalar_summary("action_1", action[0][1], self.tensorboard.time_step)
-                # self.tensorboard.scalar_summary("action_2", action[0][2], self.tensorboard.time_step)
-                # self.tensorboard.scalar_summary("action_3", action[0][3], self.tensorboard.time_step)
-                # self.tensorboard.step_update()
-                return actions
+            self.P_online.train()
+            a = actions.data.cpu().numpy()   
+            actions = np.clip(a + self.epsilon * self.noise.sample(),self.action_low,self.action_high)
+            return actions
 
     def collect_data(self, state, action, reward, next_state, done):
         # print("state", state.shape)
