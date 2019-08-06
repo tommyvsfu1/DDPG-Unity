@@ -23,7 +23,7 @@ dones = [] list with length 20
 
 def act():
     action_size = 4
-    actions = np.random.randn(1, action_size) # select an action (for each agent)
+    actions = np.random.randn(20, action_size) # select an action (for each agent)
     actions = np.clip(actions, -1, 1)                  # all actions between -1 and 1 
     return actions
 
@@ -57,12 +57,12 @@ def train(env, agent, brain_name, train_mode=True):
         scores = np.zeros(20) 
         start_time = time.time()   
         agent.ep_step += 1       
-        
         agent.reset() 
         for t in range(1,episode_max_frames):
             # use policy make action
             #============== my version=================
-            actions = agent.act(states) 
+            # actions = agent.act(states)
+            actions = act() 
             #==========================================
             # actions = agent.act(states, add_noise=True)
             #========================================== 
