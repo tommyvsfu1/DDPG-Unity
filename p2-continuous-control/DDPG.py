@@ -5,7 +5,7 @@ from logger import TensorboardLogger
 from collections import namedtuple, deque
 import random
 import copy
-seed = 1234
+seed = 11037
 random.seed(seed)
 np.random.seed(seed)
 torch.manual_seed(seed)
@@ -34,7 +34,7 @@ class OUNoise:
         self.mu = mu * np.ones(size)
         self.theta = theta
         self.sigma = sigma
-        self.seed = random.seed(1234)
+        self.seed = random.seed(11037)
         self.reset()
 
     def reset(self):
@@ -84,7 +84,7 @@ class ReplayBuffer(object):
         self.capacity = capacity
         self.memory = deque(maxlen=capacity)
         self.position = 0
-        self.seed = random.seed(1234)
+        self.seed = random.seed(11037)
     def push(self, *args):
         """
         Push (s_t, a_t, r_t, s_t+1) into buffer
