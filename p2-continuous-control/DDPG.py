@@ -79,7 +79,7 @@ class ReplayBuffer(object):
         default size : 20000 of (s_t, a_t, r_t, s_t+1)
     Input : (capacity)
     """
-    def __init__(self, capacity=50000):
+    def __init__(self, capacity=1e6):
         self.capacity = capacity
         self.memory = []
         self.position = 0
@@ -198,7 +198,6 @@ class Agent(object):
             return
         if len(self.replay_buffer) <= (10000):
             return
-        print("update")
         states, actions, rewards, next_states, dones = self.replay_buffer.sample(batch_size=self.batch_size, device=self.device)
         # print("state", states.shape)
         # print("action", actions.shape)
