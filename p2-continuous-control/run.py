@@ -59,24 +59,16 @@ def train(env, agent, brain_name, train_mode=True):
         agent.ep_step += 1       
         
         agent.reset() 
-        ac_list = list()
-        st_list = list()
-        up_list = list()
-        for t in range(episode_max_frames):
-            cil = time.time()
+        for t in range(1,episode_max_frames):
             # use policy make action
             #============== my version=================
             actions = agent.act(states) 
-            ac_time = time.time()
-            ac_list.append(ac_time - cil)
             #==========================================
             # actions = agent.act(states, add_noise=True)
             #========================================== 
             # actions = act()
             # agent <-> environment
             next_states, rewards, dones = env_step(env, actions, brain_name)
-            step_time = time.time() 
-            st_list.append(step_time - ac_time)
             # save experience to replay buffer, perform learning step at defined interval
             for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
                 # collect data
@@ -88,16 +80,14 @@ def train(env, agent, brain_name, train_mode=True):
                                 reward, 
                                 next_state.reshape(-1), 
                                 done)
-                if (t+1) % LEARN_EVERY == 0:
+                if t % LEARN_EVERY == 0:
                    agent.update()
                 # =======================================
-            up_list.append(time.time() - step_time)
             # move to next states
             states = next_states           
             scores += rewards  
             if np.any(dones):                                  
                 break
-        print("averge time","action",np.mean(ac_list),"step",np.mean(st_list),"update",np.mean(up_list))
         #############################Boring Log#############################
         ####################################################################  
         duration = time.time() - start_time

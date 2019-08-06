@@ -205,10 +205,10 @@ class Agent(object):
         # print("next state", next_states.shape)
         # print("done", dones.shape)
         #===============================Critic Update===============================
-        with torch.no_grad():
-            self.P_target.eval()
-            self.Q_target.eval()
-            target = rewards+ self.gamma * (1-dones) * self.Q_target((next_states, self.P_target(next_states)))  
+        # with torch.no_grad():
+        # self.P_target.eval()
+        # self.Q_target.eval()
+        target = rewards+ self.gamma * (1-dones) * self.Q_target((next_states, self.P_target(next_states)))  
         Q = self.Q_online((states,actions))
         td_error = self.loss_td(Q, target)
         self.q_optimizer.zero_grad()
