@@ -64,9 +64,9 @@ class Agent():
         self.memory.add(state, action, reward, next_state, done)
         # Learn at defined interval, if enough samples are available in memory
         if len(self.memory) > BATCH_SIZE and timestep % LEARN_EVERY == 0:
-            for _ in range(LEARN_NUM):
-                experiences = self.memory.sample()
-                self.learn(experiences, GAMMA)
+            # for _ in range(LEARN_NUM):
+            experiences = self.memory.sample()
+            self.learn(experiences, GAMMA)
     def act(self, state, add_noise=True):
         """Returns actions for given state as per current policy."""
         state = torch.from_numpy(state).float().to(device)
