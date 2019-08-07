@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.app
-*.cpt
+
 p2/
 Reacher_Linux_NoVis/
 # C extensions
