@@ -111,7 +111,7 @@ class Agent():
             # self.critic_target.eval()
             actions_next = self.actor_target(next_states)
             # Q_targets_next = self.critic_target( (next_states, actions_next) )
-        Q_targets = rewards + (gamma * (1 - dones) * self.critic_target( (next_states, actions_next) )) 
+        Q_targets = rewards + (gamma * self.critic_target( (next_states, actions_next) ) * (1 - dones)) 
         # Compute critic loss
         Q_expected = self.critic_local( (states, actions) )
         critic_loss_fn = torch.nn.MSELoss() 
@@ -125,8 +125,8 @@ class Agent():
         # ---------------------------- update actor ---------------------------- #
         # Compute actor loss
         actions_pred = self.actor_local(states)
-        actor_loss = self.critic_local( (states, actions_pred) )
-        actor_loss = - torch.mean(actor_loss)
+        actor_loss =  - self.critic_local( (states, actions_pred) ).mean()
+        # actor_loss = - torch.mean(actor_loss)
         # Minimize the loss
         self.actor_optimizer.zero_grad()
         actor_loss.backward()
