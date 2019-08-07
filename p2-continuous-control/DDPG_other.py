@@ -60,7 +60,7 @@ class Agent():
         self.critic_target = Critic(state_size, action_size).to(device)
         self.critic_target.load_state_dict(self.critic_local.state_dict())
         self.critic_optimizer = optim.Adam(self.critic_local.parameters(), lr=LR_CRITIC, weight_decay=WEIGHT_DECAY)
-        self.critic_loss_fn =  torch.nn.MSELoss()
+        # self.critic_loss_fn =  torch.nn.MSELoss()
         # Noise process
         self.noise = OUNoise(action_size, random_seed)
 
@@ -111,10 +111,11 @@ class Agent():
             # self.critic_target.eval()
             actions_next = self.actor_target(next_states)
             # Q_targets_next = self.critic_target( (next_states, actions_next) )
-            Q_targets = rewards + (gamma * (1 - dones) * self.critic_target( (next_states, actions_next) )) 
+        Q_targets = rewards + (gamma * (1 - dones) * self.critic_target( (next_states, actions_next) )) 
         # Compute critic loss
-        Q_expected = self.critic_local( (states, actions) ) 
-        critic_loss = self.critic_loss_fn(Q_expected, Q_targets)
+        Q_expected = self.critic_local( (states, actions) )
+        critic_loss_fn = torch.nn.MSELoss() 
+        critic_loss = critic_loss_fn(Q_expected, Q_targets)
         # Minimize the loss
         self.critic_optimizer.zero_grad()
         critic_loss.backward()
