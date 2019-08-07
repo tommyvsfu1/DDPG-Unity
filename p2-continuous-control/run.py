@@ -5,6 +5,7 @@ import torch
 from DDPG import Agent
 import time
 import argparse
+from logger import TensorboardLogger
 """
 Single Agent
 states = (1, 33) np.array
@@ -19,6 +20,8 @@ actions = (20, 4) np.array
 rewards = [] list with length 20
 dones = [] list with length 20
 """
+
+log = TensorboardLogger()
 
 def act():
     action_size = 4
@@ -88,7 +91,8 @@ def train(env, agent, brain_name, train_mode=True):
         mean_scores.append(np.mean(scores))           # save mean score for the episode
         scores_window.append(mean_scores[-1])         # save mean score to window
         moving_avgs.append(np.mean(scores_window))    # save moving average
-                
+        log.scalar_summary("Mov_Avg_Rewards",log.time_ep)
+        log.episode_update()
         if i_episode % print_every == 0:
             print('\rEpisode {} ({} sec)  -- \tMin: {:.1f}\tMax: {:.1f}\tMean: {:.1f}\tMov. Avg: {:.1f}'.format(\
                 i_episode, round(duration), min_scores[-1], max_scores[-1], mean_scores[-1], moving_avgs[-1]))
