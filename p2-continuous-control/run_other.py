@@ -156,7 +156,8 @@ def ddpg(brain_name, num_agents, env, agent, n_episodes=500, max_t=1000, solved_
             dones = env_info.local_done                         # see if episode has finished
             # save experience to replay buffer, perform learning step at defined interval
             for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
-                agent.step(state, action, reward, next_state, done, t)             
+                agent.collect_data(state, action, reward, next_state, done)
+                agent.step(t)             
 
             states = next_states
             scores += rewards        
