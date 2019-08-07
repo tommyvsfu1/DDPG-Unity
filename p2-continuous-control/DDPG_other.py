@@ -26,6 +26,13 @@ EPSILON_DECAY = 1e-6    # decay rate for noise process
 device = torch.device('cuda')
 print("using device", device)
 
+def soft_update(target, source, tau):
+    # code from https://github.com/ghliu/pytorch-ddpg/blob/master/util.py
+    for target_param, param in zip(target.parameters(), source.parameters()):
+        target_param.data.copy_(
+            target_param.data * (1.0 - tau) + param.data * tau
+        )
+
 class Agent():
     """Interacts with and learns from the environment."""
 
@@ -45,13 +52,15 @@ class Agent():
         # Actor Network (w/ Target Network)
         self.actor_local = Actor(state_size, action_size).to(device)
         self.actor_target = Actor(state_size, action_size).to(device)
+        self.actor_target.load_state_dict(self.actor_local.state_dict())
         self.actor_optimizer = optim.Adam(self.actor_local.parameters(), lr=LR_ACTOR)
 
         # Critic Network (w/ Target Network)
         self.critic_local = Critic(state_size, action_size).to(device)
         self.critic_target = Critic(state_size, action_size).to(device)
+        self.critic_target.load_state_dict(self.critic_local.state_dict())
         self.critic_optimizer = optim.Adam(self.critic_local.parameters(), lr=LR_CRITIC, weight_decay=WEIGHT_DECAY)
-
+        self.critic_loss_fn =  torch.nn.MSELoss()
         # Noise process
         self.noise = OUNoise(action_size, random_seed)
 
@@ -101,12 +110,11 @@ class Agent():
             # self.actor_target.eval()
             # self.critic_target.eval()
             actions_next = self.actor_target(next_states)
-            Q_targets_next = self.critic_target( (next_states, actions_next) )
-        # Compute Q targets for current states (y_i)
-        Q_targets = rewards + (gamma * Q_targets_next * (1 - dones))
+            # Q_targets_next = self.critic_target( (next_states, actions_next) )
+            Q_targets = rewards + (gamma * (1 - dones) * self.critic_target( (next_states, actions_next) )) 
         # Compute critic loss
         Q_expected = self.critic_local( (states, actions) ) 
-        critic_loss = F.mse_loss(Q_expected, Q_targets)
+        critic_loss = self.critic_loss_fn(Q_expected, Q_targets)
         # Minimize the loss
         self.critic_optimizer.zero_grad()
         critic_loss.backward()
@@ -116,32 +124,22 @@ class Agent():
         # ---------------------------- update actor ---------------------------- #
         # Compute actor loss
         actions_pred = self.actor_local(states)
-        actor_loss = -self.critic_local( (states, actions_pred) ).mean()
+        actor_loss = self.critic_local( (states, actions_pred) )
+        actor_loss = - torch.mean(actor_loss)
         # Minimize the loss
         self.actor_optimizer.zero_grad()
         actor_loss.backward()
         self.actor_optimizer.step()
 
         # ----------------------- update target networks ----------------------- #
-        self.soft_update(self.critic_local, self.critic_target, TAU)
-        self.soft_update(self.actor_local, self.actor_target, TAU)
+        soft_update(self.critic_target, self.critic_local, TAU)
+        soft_update(self.actor_target, self.actor_local, TAU)
 
         # ---------------------------- update noise ---------------------------- #
         self.epsilon -= EPSILON_DECAY
         self.noise.reset()
 
-    def soft_update(self, local_model, target_model, tau):
-        """Soft update model parameters.
-        θ_target = τ*θ_local + (1 - τ)*θ_target
 
-        Params
-        ======
-            local_model: PyTorch model (weights will be copied from)
-            target_model: PyTorch model (weights will be copied to)
-            tau (float): interpolation parameter
-        """
-        for target_param, local_param in zip(target_model.parameters(), local_model.parameters()):
-            target_param.data.copy_(tau*local_param.data + (1.0-tau)*target_param.data)
 
 class OUNoise:
     """Ornstein-Uhlenbeck process."""
