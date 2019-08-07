@@ -62,11 +62,10 @@ class Agent():
         # Save experience / reward
         self.memory.add(state, action, reward, next_state, done)
 
-    def step(self, timestep):
+    def update(self):
         """Save experience in replay memory, and use random sample from buffer to learn."""
         # Learn at defined interval, if enough samples are available in memory
-        if len(self.memory) > BATCH_SIZE and timestep % LEARN_EVERY == 0:
-            # for _ in range(LEARN_NUM):
+        if len(self.memory) > BATCH_SIZE:
             experiences = self.memory.sample()
             self.learn(experiences, GAMMA)
     def act(self, state, add_noise=True):

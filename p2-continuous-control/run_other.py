@@ -59,7 +59,7 @@ def train(env, agent, brain_name, train_mode=True):
         # agent.ep_step += 1       
         
         agent.reset() 
-        for t in range(episode_max_frames):
+        for t in range(1,episode_max_frames):
             # use policy make action
             #============== my version=================
             # actions = agent.act(states) 
@@ -73,16 +73,16 @@ def train(env, agent, brain_name, train_mode=True):
             for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
                 # collect data
                 #=======================================
-                agent.step(state, action, reward, next_state, done, t)
+                # agent.step(state, action, reward, next_state, done, t)
                 #========== my version==================
-                # agent.collect_data(state.reshape(-1), 
-                #                 action.reshape(-1), 
-                #                 reward, 
-                #                 next_state.reshape(-1), 
-                #                 done)
-                # if (t+1) % LEARN_EVERY == 0:
-                #     for _ in range(LEARN_NUM):
-                #         agent.update()
+                agent.collect_data(state, 
+                                action, 
+                                reward, 
+                                next_state, 
+                                done)
+                if (t) % LEARN_EVERY == 0:
+                    # for _ in range(LEARN_NUM):
+                    agent.update()
                 #=======================================
             # move to next states
             states = next_states           
@@ -135,6 +135,7 @@ def ddpg(brain_name, num_agents, env, agent, n_episodes=500, max_t=1000, solved_
         critic_path (str)     : directory to store critic network weights
 
     """
+    LEARN_EVERY = 20
     mean_scores = []                               # list of mean scores from each episode
     min_scores = []                                # list of lowest scores from each episode
     max_scores = []                                # list of highest scores from each episode
@@ -157,7 +158,8 @@ def ddpg(brain_name, num_agents, env, agent, n_episodes=500, max_t=1000, solved_
             # save experience to replay buffer, perform learning step at defined interval
             for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
                 agent.collect_data(state, action, reward, next_state, done)
-                agent.step(t)             
+                if t % LEARN_EVERY == 0:
+                    agent.step()             
 
             states = next_states
             scores += rewards        
@@ -234,8 +236,8 @@ def run(args):
     #=============================================================
     agent = Agent(state_size=33, action_size=4,random_seed=11037)
     #=============================================================
-    ddpg(brain_name, num_agents, env, agent)
-    # train(env, agent, brain_name)
+    # ddpg(brain_name, num_agents, env, agent)
+    train(env, agent, brain_name)
     env.close()
 
 if __name__ == '__main__':
