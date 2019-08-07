@@ -169,7 +169,14 @@ class Agent(object):
             self.P_online.train()
             a = actions.data.cpu().numpy()   
             actions = np.clip(a + self.epsilon * self.noise.sample(),self.action_low,self.action_high)
-            return actions
+        else :
+            with torch.no_grad():
+                self.P_online.eval()
+                state = torch.from_numpy(state).float().to(self.device)
+                actions = self.P_online(state) # continuous output
+                a = actions.data.cpu().numpy()   
+                # actions = np.clip(a + self.epsilon * self.noise.sample(),self.action_low,self.action_high)
+                return a
 
     def collect_data(self, state, action, reward, next_state, done):
         self.replay_buffer.push(state, action, reward, next_state, done)
@@ -186,6 +193,18 @@ class Agent(object):
         torch.save(self.Q_online.state_dict(), save_path + '_qonline.cpt')
         torch.save(self.Q_target.state_dict(), save_path + '_qtarget.cpt')
 
+    def load(self, load_path):
+        print("load model from", load_path)
+        if torch.cuda.is_available():
+            self.P_online.load_state_dict(torch.load(load_path + 'solved_ponline.cpt'))
+            self.P_target.load_state_dict(torch.load(load_path + 'solved_ptarget.cpt'))
+            self.Q_online.load_state_dict(torch.load(load_path + 'solved_qonline.cpt'))
+            self.Q_target.load_state_dict(torch.load(load_path + 'solved_qtarget.cpt'))
+        else:
+            self.P_online.load_state_dict(torch.load(load_path + 'solved_ponline.cpt', map_location=lambda storage, loc: storage))
+            self.P_target.load_state_dict(torch.load(load_path + 'solved_ptarget.cpt', map_location=lambda storage, loc: storage))
+            self.Q_online.load_state_dict(torch.load(load_path + 'solved_qonline.cpt', map_location=lambda storage, loc: storage))
+            self.Q_target.load_state_dict(torch.load(load_path + 'solved_qtarget.cpt', map_location=lambda storage, loc: storage))
     def update(self):
         if len(self.replay_buffer) < self.batch_size:
             return
