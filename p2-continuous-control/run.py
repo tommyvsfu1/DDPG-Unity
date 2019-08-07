@@ -91,7 +91,7 @@ def train(env, agent, brain_name, train_mode=True):
         mean_scores.append(np.mean(scores))           # save mean score for the episode
         scores_window.append(mean_scores[-1])         # save mean score to window
         moving_avgs.append(np.mean(scores_window))    # save moving average
-        log.scalar_summary("Mov_Avg_Rewards",log.time_ep)
+        log.scalar_summary("Mov_Avg_Rewards", moving_avgs[-1], log.time_ep)
         log.episode_update()
         if i_episode % print_every == 0:
             print('\rEpisode {} ({} sec)  -- \tMin: {:.1f}\tMax: {:.1f}\tMean: {:.1f}\tMov. Avg: {:.1f}'.format(\
