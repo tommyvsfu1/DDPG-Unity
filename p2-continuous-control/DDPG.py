@@ -91,11 +91,6 @@ class ReplayBuffer(object):
             Input : s_t, a_t, r_t, s_t+1, done
             Output : None
         """
-        # if len(self.memory) < self.capacity:
-        #     self.memory.append(None)
-        # self.memory[self.position] = Transition(*args)
-        # self.position = (self.position + 1) % self.capacity
-
         e = Transition(*args)
         self.memory.append(e)
 
@@ -177,16 +172,6 @@ class Agent(object):
             return actions
 
     def collect_data(self, state, action, reward, next_state, done):
-        # print("state", state.shape)
-        # print("action", action.shape)
-        # print("reward", reward)
-        # print("next state", next_state.shape)
-        # print("done", done)
-        # self.replay_buffer.push(torch.from_numpy(state).float().unsqueeze(0), 
-        #                         torch.from_numpy(action).float().unsqueeze(0), 
-        #                         torch.tensor([reward]).float().unsqueeze(0), 
-        #                         torch.from_numpy(next_state).float().unsqueeze(0),
-        #                         torch.tensor([done]).float().unsqueeze(0))
         self.replay_buffer.push(state, action, reward, next_state, done)
     def reset(self):
         self.noise.reset()
