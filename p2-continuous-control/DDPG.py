@@ -135,10 +135,10 @@ class Agent(object):
         self.a_dim, self.s_dim  = a_dim, s_dim
         self.P_online = Actor(s_dim,a_dim).to(device)
         self.P_target = Actor(s_dim,a_dim).to(device)
-        self.P_target.load_state_dict(self.P_online.state_dict())
+        # self.P_target.load_state_dict(self.P_online.state_dict())
         self.Q_online = Critic(s_dim,a_dim).to(device)
         self.Q_target = Critic(s_dim,a_dim).to(device)
-        self.Q_target.load_state_dict(self.Q_online.state_dict())
+        # self.Q_target.load_state_dict(self.Q_online.state_dict())
         self.q_optimizer = torch.optim.Adam(self.Q_online.parameters(),lr=1e-3)
         self.p_optimizer = torch.optim.Adam(self.P_online.parameters(),lr=1e-3)
 
