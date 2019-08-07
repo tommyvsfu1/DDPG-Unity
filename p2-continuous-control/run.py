@@ -21,7 +21,7 @@ rewards = [] list with length 20
 dones = [] list with length 20
 """
 
-log = TensorboardLogger()
+log = TensorboardLogger('./p2_log')
 
 def act():
     action_size = 4
