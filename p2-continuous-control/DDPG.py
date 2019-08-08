@@ -216,6 +216,8 @@ class Agent(object):
     def update(self):
         if len(self.replay_buffer) < self.batch_size:
             return
+        if len(self.replay_buffer) < self.replay_buffer.tree.capacity:
+            return
         # if len(self.replay_buffer) <= (10000):
         #     return
         # uniform replay buffer
