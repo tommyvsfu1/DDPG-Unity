@@ -117,11 +117,15 @@ class Memory(object):  # stored as ( s, a, r, s_ ) in SumTree
         ISWeights = is_weight
 
         experiences = b_memory
-        state_batch = torch.from_numpy(np.vstack([e.state for e in experiences if e is not None])).float().to(device)
-        action_batch = torch.from_numpy(np.vstack([e.action for e in experiences if e is not None])).float().to(device)
-        reward_batch = torch.from_numpy(np.vstack([e.reward for e in experiences if e is not None])).float().to(device)
-        next_state_batch = torch.from_numpy(np.vstack([e.next_state for e in experiences if e is not None])).float().to(device)
-        dones_batch = torch.from_numpy(np.vstack([e.done for e in experiences if e is not None]).astype(np.uint8)).float().to(device)
+
+        try:
+            state_batch = torch.from_numpy(np.vstack([e.state for e in experiences if e is not None])).float().to(device)
+            action_batch = torch.from_numpy(np.vstack([e.action for e in experiences if e is not None])).float().to(device)
+            reward_batch = torch.from_numpy(np.vstack([e.reward for e in experiences if e is not None])).float().to(device)
+            next_state_batch = torch.from_numpy(np.vstack([e.next_state for e in experiences if e is not None])).float().to(device)
+            dones_batch = torch.from_numpy(np.vstack([e.done for e in experiences if e is not None]).astype(np.uint8)).float().to(device)
+        except:
+            print("e is", experiences)
         return b_idx, state_batch, action_batch, reward_batch, next_state_batch, dones_batch, ISWeights
 
     def batch_update(self, tree_idx, abs_errors):
