@@ -239,7 +239,7 @@ class Agent(object):
 
         #=============================PER
         loss_fn = torch.nn.MSELoss(reduction='none')
-        weighted_sum = torch.from_numpy(ISWeights).float() * loss_fn(Q,target)
+        weighted_sum = torch.from_numpy(ISWeights).float().to(self.device) * loss_fn(Q,target)
         td_error_square = torch.mean(weighted_sum)
         #=============================R
         # td_error_square = self.loss_td(Q, target)
