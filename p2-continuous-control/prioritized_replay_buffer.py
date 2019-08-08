@@ -131,7 +131,8 @@ class Memory(object):  # stored as ( s, a, r, s_ ) in SumTree
                         e.state = e.state
                     except:
                         print("type", type(e))
-                        print("fuck",e.state)
+                        if type(e) == type(int):
+                            print("e is", e)
         return b_idx, state_batch, action_batch, reward_batch, next_state_batch, dones_batch, ISWeights
 
     def batch_update(self, tree_idx, abs_errors):
