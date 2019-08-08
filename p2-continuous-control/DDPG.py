@@ -5,6 +5,7 @@ from logger import TensorboardLogger
 from collections import namedtuple, deque
 import random
 import copy
+from prioritized_replay_buffer import Memory
 seed = 11037
 random.seed(seed)
 np.random.seed(seed)
@@ -139,7 +140,8 @@ class Agent(object):
 
 
         self.loss_td = torch.nn.MSELoss()
-        self.replay_buffer = ReplayBuffer()
+        # self.replay_buffer = ReplayBuffer()
+        self.replay_buffer = Memory(int(1e5)) # prioritized replay use smaller, avoid memory exhausted
         self.batch_size = 128
         self.gamma = 0.99
         self.discrete = False
@@ -169,6 +171,7 @@ class Agent(object):
             self.P_online.train()
             a = actions.data.cpu().numpy()   
             actions = np.clip(a + self.epsilon * self.noise.sample(),self.action_low,self.action_high)
+            return actions
         else :
             with torch.no_grad():
                 self.P_online.eval()
@@ -179,7 +182,12 @@ class Agent(object):
                 return a
 
     def collect_data(self, state, action, reward, next_state, done):
-        self.replay_buffer.push(state, action, reward, next_state, done)
+        # uniform replay buffer
+        # self.replay_buffer.push(state, action, reward, next_state, done)
+        # prioritized replay buffer
+        e = Transition(state, action, reward, next_state, done)
+        self.replay_buffer.store(e)
+        
     def reset(self):
         self.noise.reset()
 
@@ -210,12 +218,17 @@ class Agent(object):
             return
         # if len(self.replay_buffer) <= (10000):
         #     return
-        states, actions, rewards, next_states, dones = self.replay_buffer.sample(batch_size=self.batch_size, device=self.device)
+        # uniform replay buffer
+        # states, actions, rewards, next_states, dones = self.replay_buffer.sample(batch_size=self.batch_size, device=self.device)
+        # prioritized replay buffer
+        b_idx, states, actions, rewards, next_states, dones, ISWeights = self.replay_buffer.sample(n=self.batch_size, device=self.device)
+
         # print("state", states.shape)
         # print("action", actions.shape)
         # print("reward", rewards.shape)
         # print("next state", next_states.shape)
         # print("done", dones.shape)
+        # print("IS weights", ISWeights.shape)
         #===============================Critic Update===============================
         with torch.no_grad():
             # self.P_target.eval()
@@ -223,9 +236,16 @@ class Agent(object):
             action_next = self.P_target(next_states)
             target = rewards+ self.gamma * (1-dones) * self.Q_target( (next_states, action_next) )  
         Q = self.Q_online((states,actions))
-        td_error = self.loss_td(Q, target)
+
+        #=============================PER
+        loss_fn = torch.nn.MSELoss(reduction='none')
+        weighted_sum = torch.from_numpy(ISWeights).float() * loss_fn(Q,target)
+        td_error_square = torch.mean(weighted_sum)
+        #=============================R
+        # td_error_square = self.loss_td(Q, target)
+        #================================
         self.q_optimizer.zero_grad()
-        td_error.backward()
+        td_error_square.backward()
         torch.nn.utils.clip_grad_norm_(self.Q_online.parameters(), 1)
         # for p in self.Q_online.named_parameters():
         #     layer_name, parameter = p
@@ -234,6 +254,8 @@ class Agent(object):
         #         self.tensorboard.scalar_summary("Q"+layer_name, norm, self.tensorboard.time_train)
         self.q_optimizer.step()
 
+        td_error = (torch.abs(Q-target)).detach().numpy()
+        self.replay_buffer.batch_update(b_idx, td_error)
         #===============================Actor Update===============================
         q = self.Q_online((states, self.P_online(states)))  
         loss_a = -torch.mean(q) 

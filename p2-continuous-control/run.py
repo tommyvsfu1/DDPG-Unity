@@ -68,6 +68,7 @@ def train(env, agent, brain_name, train_mode=True):
             # agent <-> environment
             next_states, rewards, dones = env_step(env, actions, brain_name)
             # save experience to replay buffer, perform learning step at defined interval
+
             for state, action, reward, next_state, done in zip(states, actions, rewards, next_states, dones):
                 # collect data
                 agent.collect_data(state.reshape(-1), 
