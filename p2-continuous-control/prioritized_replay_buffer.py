@@ -112,8 +112,8 @@ class Memory(object):  # stored as ( s, a, r, s_ ) in SumTree
             
             b_idx[i], b_memory[i] = idx, data
         
-        is_weight = np.power(self.tree.capacity * np.array(priorities), -self.beta)
-        is_weight /= is_weight.max()
+        is_weight = np.power(self.tree.capacity * np.array(priorities) + 1e-10, -self.beta)
+        is_weight /= (is_weight.max()+1e-10)
         ISWeights = is_weight
 
         experiences = b_memory
