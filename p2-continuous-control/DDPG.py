@@ -254,7 +254,7 @@ class Agent(object):
         #         self.tensorboard.scalar_summary("Q"+layer_name, norm, self.tensorboard.time_train)
         self.q_optimizer.step()
 
-        td_error = (torch.abs(Q-target)).detach().numpy()
+        td_error = (torch.abs(Q-target)).detach().cpu().numpy()
         self.replay_buffer.batch_update(b_idx, td_error)
         #===============================Actor Update===============================
         q = self.Q_online((states, self.P_online(states)))  
