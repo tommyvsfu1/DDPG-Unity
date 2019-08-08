@@ -125,7 +125,12 @@ class Memory(object):  # stored as ( s, a, r, s_ ) in SumTree
             next_state_batch = torch.from_numpy(np.vstack([e.next_state for e in experiences if e is not None])).float().to(device)
             dones_batch = torch.from_numpy(np.vstack([e.done for e in experiences if e is not None]).astype(np.uint8)).float().to(device)
         except:
-            print("e is", experiences)
+            for e in experiences:
+                if e is not None:
+                    try:
+                        e.state = e.state
+                    except:
+                        print("fuck",e)
         return b_idx, state_batch, action_batch, reward_batch, next_state_batch, dones_batch, ISWeights
 
     def batch_update(self, tree_idx, abs_errors):
