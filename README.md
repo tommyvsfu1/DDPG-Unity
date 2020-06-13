@@ -1,5 +1,5 @@
 # Unity 
-<img src="https://github.com/tommyvsfu1/DDPG-Unity/blob/master/robot_arm.gif" width="80%">
+<img src="https://github.com/tommyvsfu1/DDPG-Unity/blob/master/robot_arm.gif" width="100%">
 
 ## DDPG
 Solved!
